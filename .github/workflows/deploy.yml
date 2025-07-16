@@ -29,6 +29,9 @@ jobs:
   build-and-push:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -58,8 +61,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/thimote147/portfolio:latest
-            ghcr.io/thimote147/portfolio:${{ github.sha }}
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
 
   deploy:
     needs: build-and-push
