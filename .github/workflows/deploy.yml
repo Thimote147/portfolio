@@ -61,8 +61,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/thimote147/portfolio:latest
+            ghcr.io/thimote147/portfolio:${{ github.sha }}
 
   deploy:
     needs: build-and-push
