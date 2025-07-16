@@ -30,19 +30,18 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           chmod 700 ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
-          
+
           # Test SSH connection
           ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful'"
 
-      - name: Create deployment directory on server
+      - name: Clone repository on server
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p ~/websites/portfolio"
-
-      - name: Upload project files to server
-        run: |
-          tar --exclude=node_modules --exclude=.git --exclude=.github --exclude=dist -czf portfolio.tar.gz .
-          scp portfolio.tar.gz ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "cd ~/websites && rm -rf portfolio && mkdir portfolio && tar -xzf portfolio.tar.gz -C portfolio && rm portfolio.tar.gz"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
+            mkdir -p ~/websites
+            cd ~/websites
+            rm -rf portfolio
+            git clone git@github.com:Thimote147/portfolio.git portfolio
+          ENDSSH
 
   deploy:
     needs: build
@@ -55,7 +54,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           chmod 700 ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
-          
+
           # Test SSH connection
           ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful'"
 
