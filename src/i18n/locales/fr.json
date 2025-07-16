@@ -94,7 +94,7 @@
     "form": {
       "title": "Envoyez-moi un message",
       "name": "Nom",
-      "email": "Email", 
+      "email": "Email",
       "message": "Message",
       "submit": "Envoyer",
       "notice": "⚠️ Ce formulaire n'est pas encore fonctionnel. Veuillez me contacter directement via les réseaux sociaux."

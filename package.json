@@ -1,27 +1,32 @@
 {
-  "name": "modern-portfolio",
+  "name": "portfolio",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --max-warnings 0",
+    "lint:fix": "eslint src --fix && prettier --write src",
+    "format": "prettier --write src",
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "react-icons": "^4.10.1",
     "@heroicons/react": "^2.0.18",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.0",
     "i18next": "^23.4.4",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-i18next": "^13.1.2",
-    "i18next-browser-languagedetector": "^7.1.0"
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
+    "@eslint/css": "^0.10.0",
+    "@eslint/js": "^9.31.0",
+    "@eslint/json": "^0.13.0",
     "@tailwindcss/forms": "^0.5.4",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
@@ -29,12 +34,18 @@
     "@typescript-eslint/parser": "^6.4.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "autoprefixer": "^10.4.15",
-    "eslint": "^8.47.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "globals": "^16.3.0",
     "postcss": "^8.4.28",
+    "prettier": "^3.6.2",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
+    "typescript-eslint": "^8.37.0",
     "vite": "^4.4.9"
   }
 }

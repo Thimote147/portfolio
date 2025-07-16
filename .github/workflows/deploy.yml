@@ -5,9 +5,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-  push:
-    branches:
-      - dev
 
 jobs:
   # Job for linting on pull requests
@@ -50,7 +47,7 @@ jobs:
 
   # Job for deployment
   deploy:
-    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' || github.ref == 'refs/heads/dev'
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest # Use the default GitHub runner for deployment
 
     steps:
@@ -86,14 +83,8 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
         run: |
-          # Determine port based on branch
-          if [ "$BRANCH_NAME" = "dev" ]; then
-            PORT=5176
-          elif [ "$BRANCH_NAME" = "main" ]; then
-            PORT=5175
-          else
-            echo "Unsupported branch: $BRANCH_NAME" && exit 1
-          fi
+          # Deploy only production on port 7777
+          PORT=7777
 
           # Set environment variables based on branch
           VITE_SUPABASE_URL=$VITE_SUPABASE_URL
@@ -108,34 +99,34 @@ jobs:
           # SSH into the server and deploy
           ssh -t -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519 $SERVER_USER@$SERVER_HOST << EOF
             # Ensure correct permissions for the repository directory
-            sudo chown -R $SERVER_USER:$SERVER_USER /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME
-            sudo chmod -R 755 /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME
-            sudo find /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME -type f -exec chmod +rw {} \;
+            sudo chown -R $SERVER_USER:$SERVER_USER /home/$SERVER_USER/websites/portfolio
+            sudo chmod -R 755 /home/$SERVER_USER/websites/portfolio
+            sudo find /home/$SERVER_USER/websites/portfolio -type f -exec chmod +rw {} \;
 
             # Remove existing portfolio directory
-            if [ -d "/home/$SERVER_USER/websites/portfolio-$BRANCH_NAME" ]; then
+            if [ -d "/home/$SERVER_USER/websites/portfolio" ]; then
               echo "Removing existing portfolio directory..."
-              echo "$SUDO_PASSWORD" | sudo -S rm -rf /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME || { echo "Failed to remove directory"; exit 1; }
+              echo "$SUDO_PASSWORD" | sudo -S rm -rf /home/$SERVER_USER/websites/portfolio || { echo "Failed to remove directory"; exit 1; }
             fi
 
             # Clone the repository using SSH
-            echo "Cloning the repository branch: $BRANCH_NAME..."
-            git clone --branch $BRANCH_NAME git@github.com:Thimote147/portfolio.git /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME || { echo "Git clone failed"; exit 1; }
+            echo "Cloning the repository branch: main..."
+            git clone --branch main git@github.com:Thimote147/portfolio.git /home/$SERVER_USER/websites/portfolio || { echo "Git clone failed"; exit 1; }
 
             # Set permissions for the repository
-            sudo chown -R $SERVER_USER:$SERVER_USER /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME
-            sudo chmod -R 755 /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME
+            sudo chown -R $SERVER_USER:$SERVER_USER /home/$SERVER_USER/websites/portfolio
+            sudo chmod -R 755 /home/$SERVER_USER/websites/portfolio
                         
             # Create the .env file for environment variables
-            echo "VITE_SUPABASE_URL=$VITE_SUPABASE_URL" > /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME/.env
-            echo "VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY" >> /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME/.env
+            echo "VITE_SUPABASE_URL=$VITE_SUPABASE_URL" > /home/$SERVER_USER/websites/portfolio/.env
+            echo "VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY" >> /home/$SERVER_USER/websites/portfolio/.env
 
             # Remove existing Docker container if exists
-            if docker ps -a --format '{{.Names}}' | grep -q "portfolio-app-$BRANCH_NAME"; then
-              docker stop portfolio-app-$BRANCH_NAME || true
-              docker rm -f portfolio-app-$BRANCH_NAME || true
+            if docker ps -a --format '{{.Names}}' | grep -q "portfolio-app"; then
+              docker stop portfolio-app || true
+              docker rm -f portfolio-app || true
             else
-              echo "Container portfolio-app-$BRANCH_NAME does not exist."
+              echo "Container portfolio-app does not exist."
             fi
 
             # Clean up old Docker images
@@ -143,16 +134,12 @@ jobs:
             docker builder prune -f --all
 
             # Build and run the Docker container
-            cd /home/$SERVER_USER/websites/portfolio-$BRANCH_NAME
-            if [ "$BRANCH_NAME" = "dev" ]; then
-              docker build --no-cache --build-arg BRANCH_NAME=dev -t portfolio-app-$BRANCH_NAME . || { echo "Docker build failed"; exit 1; }
-            else
-              docker build --no-cache --build-arg BRANCH_NAME=prod -t portfolio-app-$BRANCH_NAME . || { echo "Docker build failed"; exit 1; }
-            fi
+            cd /home/$SERVER_USER/websites/portfolio
+            docker build --no-cache --build-arg BRANCH_NAME=prod -t portfolio-app . || { echo "Docker build failed"; exit 1; }
 
             # For prod, use the default dist folder (dist)
             docker cp /home/$SERVER_USER/websites/portfolio/dist/. portfolio:/usr/share/nginx/html
 
-            echo "Running Docker container #portfolio-app-$BRANCH_NAME at port $PORT..."
-            docker run -d --name portfolio-app-$BRANCH_NAME --restart unless-stopped -p "$PORT:80" --env-file .env portfolio-app-$BRANCH_NAME || { echo "Docker run failed"; exit 1; }
+            echo "Running Docker container portfolio-app at port $PORT..."
+            docker run -d --name portfolio-app --restart unless-stopped -p "$PORT:80" --env-file .env portfolio-app || { echo "Docker run failed"; exit 1; }
           EOF

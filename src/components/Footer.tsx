@@ -1,15 +1,15 @@
-import { useTranslation } from 'react-i18next'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { useTranslation } from "react-i18next";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-800">
       <div className="container mx-auto py-8">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            © {new Date().getFullYear()} Thimoté Fétu. {t('footer.rights')}
+            © {new Date().getFullYear()} Thimoté Fétu. {t("footer.rights")}
           </p>
           <div className="flex space-x-6">
             <a
@@ -34,5 +34,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

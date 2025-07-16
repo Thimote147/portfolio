@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react'
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+import { useState, useEffect } from "react";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true) // Par défaut dark
+  const [isDark, setIsDark] = useState(true); // Par défaut dark
 
   useEffect(() => {
     // Force le mode sombre au chargement
-    document.documentElement.classList.add('dark')
-    setIsDark(true)
-  }, [])
+    document.documentElement.classList.add("dark");
+    setIsDark(true);
+  }, []);
 
   const toggleTheme = () => {
     if (isDark) {
-      setIsDark(false)
-      document.documentElement.classList.remove('dark')
-      localStorage.theme = 'light'
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
     } else {
-      setIsDark(true)
-      document.documentElement.classList.add('dark')
-      localStorage.theme = 'dark'
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
     }
-  }
+  };
 
   return (
     <button
@@ -34,5 +34,5 @@ export default function ThemeToggle() {
         <MoonIcon className="h-5 w-5" />
       )}
     </button>
-  )
+  );
 }
