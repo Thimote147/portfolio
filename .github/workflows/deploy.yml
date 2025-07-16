@@ -30,14 +30,18 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Create deployment directory on server
+      - name: Clone/update repository on server
         run: |
-          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p ~/websites/portfolio"
-
-      - name: Upload project files to server
-        run: |
-          rsync -av -e "ssh -i ~/.ssh/id_ed25519" --exclude=node_modules --exclude=.git --exclude=.github --exclude=dist \
-            . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/portfolio/
+          ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
+            mkdir -p ~/websites
+            if [ -d "~/websites/portfolio/.git" ]; then
+              cd ~/websites/portfolio
+              git pull origin main
+            else
+              rm -rf ~/websites/portfolio
+              git clone https://github.com/Thimote147/portfolio.git ~/websites/portfolio
+            fi
+          ENDSSH
 
   deploy:
     needs: build
