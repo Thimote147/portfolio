@@ -15,10 +15,12 @@ export default function Projects() {
         returnObjects: true,
       }) as string[],
       liveUrl: "https://qualitynurse.thimotefetu.fr",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Thimote147/qualitynurse",
       type: t("projects.items.qualitynurse.type"),
       status: "Live",
       icon: "https://raw.githubusercontent.com/Thimote147/qualitynurse/main/src/assets/icon.png",
+      projectId: "quality-nurse",
+      client: t("projects.items.qualitynurse.client"),
     },
     {
       title: t("projects.items.lasermagique.title"),
@@ -31,6 +33,8 @@ export default function Projects() {
       type: t("projects.items.lasermagique.type"),
       status: "In Development",
       icon: "https://raw.githubusercontent.com/Thimote147/Laser-Magique-App/main/assets/images/icon.jpeg",
+      projectId: "laser-magique",
+      client: t("projects.items.lasermagique.client"),
     },
   ];
 
@@ -52,7 +56,7 @@ export default function Projects() {
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 items-stretch">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -60,12 +64,14 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="card-hover"
+                className="subtle-hover h-full"
               >
                 <ProjectCard
                   {...project}
                   liveUrl={project.liveUrl}
                   githubUrl={project.githubUrl}
+                  projectId={project.projectId}
+                  client={project.client}
                 />
               </motion.div>
             ))}

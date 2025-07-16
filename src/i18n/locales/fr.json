@@ -6,11 +6,12 @@
     "contact": "Contact"
   },
   "home": {
-    "greeting": "Bonjour, je suis",
+    "greeting": "Salut, je suis",
     "role": "Étudiant développeur web & mobile passionné par la création d'applications innovantes.",
     "cta": {
       "work": "Voir mes projets",
-      "contact": "Me contacter"
+      "contact": "Me contacter",
+      "cv": "Télécharger CV"
     },
     "about": {
       "title": "À propos de moi",
@@ -29,6 +30,7 @@
     "skills": "Compétences techniques",
     "experience": "Projets & Expériences",
     "education_title": "Formation",
+    "downloadCV": "Télécharger CV",
     "skillCategories": {
       "languages": "Langages",
       "frameworks": "Frameworks & Bibliothèques",
@@ -37,16 +39,16 @@
     },
     "experiences": {
       "qualitynurse": {
-        "date": "2025",
-        "title": "Quality nurse",
-        "company": "Projet personnel",
-        "description": "Développement d'une plateforme web pour la gestion de la qualité des soins infirmiers."
+        "date": "Juillet 2024 - Août 2025",
+        "title": "Quality Nurse",
+        "company": "Quality Nurse",
+        "description": "Développeur solo modernisant un site PHP rustique en plateforme React.js complète. Transformation d'un système obsolète en application web moderne et responsive avec 11 services médicaux, disponibilité 24h/24, planification de rendez-vous et systèmes de gestion des patients."
       },
       "lasermagique": {
-        "date": "2025",
+        "date": "Juillet 2024 - En cours",
         "title": "Laser Magique",
-        "company": "Application mobile Flutter",
-        "description": "Application de gestion de réservations et de stock développée en Flutter."
+        "company": "Laser Magique",
+        "description": "Développeur solo digitalisant un système de gestion papier en application mobile Flutter complète. Développement d'un système complet de gestion de réservations, suivi d'inventaire, statistiques en temps réel et traitement des paiements pour les opérations du centre de divertissement."
       }
     },
     "education": {
@@ -63,16 +65,93 @@
     "description": "Découvrez mes réalisations récentes qui démontrent mes compétences en développement web et mobile.",
     "items": {
       "qualitynurse": {
-        "title": "Quality nurse",
-        "description": "Plateforme web dédiée à la gestion de la qualité des soins infirmiers avec interface moderne et fonctionnalités avancées.",
-        "tech": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-        "type": "Application Web"
+        "title": "Site web Quality Nurse",
+        "description": "Plateforme complète de gestion des soins de santé modernisant les systèmes de qualité des soins infirmiers. Intègre 11 services médicaux, disponibilité 24h/24, planification de rendez-vous, gestion des patients et tableau de bord de surveillance en temps réel.",
+        "tech": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "Authentification JWT",
+          "Design Responsive"
+        ],
+        "type": "Application Web",
+        "client": "Quality Nurse",
+        "duration": "Juillet 2024 - Août 2025",
+        "role": "Développeur Solo",
+        "status": "completed",
+        "features": [
+          "11 services médicaux intégrés",
+          "Système de disponibilité 24h/24",
+          "Planification de rendez-vous",
+          "Tableau de bord de gestion des patients",
+          "Surveillance en temps réel",
+          "Design responsive mobile",
+          "Authentification sécurisée",
+          "Support multi-langues"
+        ],
+        "challenges": [
+          "Modernisation du code PHP legacy",
+          "Implémentation du design responsive",
+          "Intégration de multiples services médicaux",
+          "Conformité de sécurité des données"
+        ],
+        "results": [
+          "Modernisation réussie du système obsolète",
+          "Amélioration de l'expérience utilisateur et accessibilité",
+          "Réduction des coûts de maintenance",
+          "Amélioration de l'évolutivité du système"
+        ],
+        "longDescription": "Quality Nurse représente une transformation numérique complète des systèmes de gestion des soins de santé. Ce projet impliquait la modernisation complète d'un site web legacy basé sur PHP en plateforme React.js sophistiquée. Le système intègre maintenant de manière transparente 11 services médicaux distincts, offrant une disponibilité 24h/24 et des capacités avancées de gestion des patients. Grâce à une planification et exécution soigneuses, nous avons transformé un système obsolète en plateforme moderne et évolutive qui sert efficacement les prestataires de soins et les patients."
       },
       "lasermagique": {
-        "title": "Laser Magique",
-        "description": "Application mobile Flutter pour la gestion de réservations et de stock avec interface intuitive et synchronisation en temps réel.",
-        "tech": ["Flutter", "Dart", "Firebase", "Docker"],
-        "type": "Application Mobile"
+        "title": "Application Laser Magique",
+        "description": "Transformation numérique complète des opérations du centre de divertissement, du papier au mobile-first. Système de réservation complet, suivi d'inventaire, statistiques en temps réel et historique des paiements pour les services laser tag et divertissement.",
+        "tech": [
+          "Flutter",
+          "Dart",
+          "Supabase",
+          "PostgreSQL",
+          "Base de données temps réel",
+          "Historique paiements",
+          "Notifications push",
+          "Tableau de bord statistiques"
+        ],
+        "type": "Application Mobile",
+        "client": "Laser Magique",
+        "duration": "Juillet 2024 - En cours",
+        "role": "Développeur Solo",
+        "status": "development",
+        "features": [
+          "Système complet de gestion de réservations",
+          "Suivi d'inventaire en temps réel",
+          "Tableau de bord de gestion client",
+          "Historique des paiements",
+          "Statistiques et rapports",
+          "Notifications push",
+          "Contrôles d'accès multi-utilisateurs",
+          "Support mode hors ligne"
+        ],
+        "challenges": [
+          "Digitalisation des processus papier",
+          "Synchronisation en temps réel",
+          "Algorithmes de réservation complexes",
+          "Intégration système de paiement"
+        ],
+        "results": [
+          "Élimination de la gestion papier",
+          "Amélioration de l'efficacité opérationnelle",
+          "Insights business en temps réel",
+          "Amélioration de l'expérience client"
+        ],
+        "longDescription": "Laser Magique représente une révolution numérique complète pour les opérations de centres de divertissement. Cette application Flutter complète transforme la gestion traditionnelle papier en solution mobile-first rationalisée. Le système gère tout, des algorithmes de réservation complexes à la gestion d'inventaire en temps réel, l'historique des paiements et les statistiques client. Actuellement en développement actif, ce projet montre la puissance de la technologie mobile moderne dans la révolution des opérations commerciales traditionnelles.",
+        "nextSteps": [
+          "Créer l'interface détaillée pour les fiches de profil client",
+          "Intégrer le système de suivi complet des profils",
+          "Finaliser les tests et déployer en production"
+        ]
       }
     },
     "links": {
@@ -84,7 +163,10 @@
       "live": "En ligne",
       "development": "En développement",
       "completed": "Terminé",
-      "beta": "Bêta"
+      "beta": "Bêta",
+      "planning": "Planification",
+      "testing": "Tests",
+      "maintenance": "Maintenance"
     }
   },
   "contact": {
@@ -97,10 +179,43 @@
       "email": "Email",
       "message": "Message",
       "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "✅ Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
+      "sendAnother": "Envoyer un autre message",
       "notice": "⚠️ Ce formulaire n'est pas encore fonctionnel. Veuillez me contacter directement via les réseaux sociaux."
     }
   },
   "footer": {
     "rights": "Tous droits réservés."
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "goHome": "Retour à l'accueil",
+    "viewProjects": "Voir mes projets"
+  },
+  "projectDetail": {
+    "backToProjects": "Retour aux projets",
+    "overview": "Aperçu",
+    "features": "Fonctionnalités clés",
+    "technologies": "Technologies utilisées",
+    "challenges": "Défis & Solutions",
+    "results": "Résultats & Impact",
+    "projectInfo": "Informations du projet",
+    "client": "Client",
+    "duration": "Durée",
+    "role": "Rôle",
+    "status": "Statut",
+    "type": "Type",
+    "viewLive": "Voir le site en ligne",
+    "viewCode": "Voir le code source",
+    "viewDemo": "Voir la démo",
+    "moreProjects": "Plus de projets",
+    "projectGallery": "Galerie du projet",
+    "techStack": "Stack technique",
+    "keyMetrics": "Métriques clés",
+    "timeline": "Chronologie du projet",
+    "testimonial": "Témoignage client",
+    "nextSteps": "Prochaines étapes"
   }
 }

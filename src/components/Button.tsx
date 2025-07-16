@@ -16,17 +16,17 @@ export default function Button({
   return (
     <button
       className={clsx(
-        "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 hover:scale-105",
+        "inline-flex items-center justify-center rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
         {
-          "bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 shadow-lg shadow-blue-500/25":
+          "bg-blue-600 text-white hover:bg-blue-700 shadow-sm":
             variant === "primary",
-          "bg-white/10 text-gray-900 dark:text-white hover:bg-white/20 border border-gray-300 dark:border-white/20 backdrop-blur-sm":
+          "bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600":
             variant === "secondary",
-          "border border-blue-500/50 bg-transparent text-blue-600 dark:text-blue-400 hover:bg-blue-500/10 hover:border-blue-400":
+          "border border-blue-600 bg-transparent text-blue-600 hover:bg-blue-600 hover:text-white dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-400 dark:hover:text-white":
             variant === "outline",
         },
         {
-          "px-2.5 py-1.5 text-sm": size === "sm",
+          "px-3 py-1.5 text-sm": size === "sm",
           "px-4 py-2 text-sm": size === "md",
           "px-6 py-3 text-base": size === "lg",
         },

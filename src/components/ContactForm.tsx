@@ -1,28 +1,40 @@
-import { useState, FormEvent } from "react";
 import { useTranslation } from "react-i18next";
+import { useContactForm } from "../hooks/useContactForm";
 import Button from "./Button";
 
 export default function ContactForm() {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-  };
+  const {
+    formData,
+    isLoading,
+    isSuccess,
+    error,
+    handleInputChange,
+    handleSubmit,
+    resetForm,
+  } = useContactForm();
 
   return (
     <div className="space-y-6">
-      <div className="p-4 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-700 rounded-lg">
-        <p className="text-sm text-yellow-800 dark:text-yellow-200">
-          {t("contact.form.notice")}
-        </p>
-      </div>
+      {error && (
+        <div className="p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg">
+          <p className="text-sm text-red-800 dark:text-red-200">{error}</p>
+        </div>
+      )}
+
+      {isSuccess && (
+        <div className="p-4 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg">
+          <p className="text-sm text-green-800 dark:text-green-200">
+            {t("contact.form.success")}
+          </p>
+          <button
+            onClick={resetForm}
+            className="mt-2 text-sm text-green-800 dark:text-green-200 underline hover:no-underline"
+          >
+            {t("contact.form.sendAnother")}
+          </button>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -39,9 +51,8 @@ export default function ContactForm() {
             required
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300"
             value={formData.name}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, name: e.target.value }))
-            }
+            onChange={handleInputChange}
+            disabled={isLoading || isSuccess}
           />
         </div>
         <div>
@@ -58,9 +69,8 @@ export default function ContactForm() {
             required
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300"
             value={formData.email}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, email: e.target.value }))
-            }
+            onChange={handleInputChange}
+            disabled={isLoading || isSuccess}
           />
         </div>
         <div>
@@ -77,14 +87,18 @@ export default function ContactForm() {
             required
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300"
             value={formData.message}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, message: e.target.value }))
-            }
+            onChange={handleInputChange}
+            disabled={isLoading || isSuccess}
           />
         </div>
         <div>
-          <Button type="submit" size="lg" className="w-full">
-            {t("contact.form.submit")}
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full"
+            disabled={isLoading || isSuccess}
+          >
+            {isLoading ? t("contact.form.sending") : t("contact.form.submit")}
           </Button>
         </div>
       </form>

@@ -10,7 +10,8 @@
     "role": "Informatica student gepassioneerd door web & mobiele ontwikkeling, het creëren van innovatieve applicaties.",
     "cta": {
       "work": "Bekijk mijn projecten",
-      "contact": "Neem contact op"
+      "contact": "Neem contact op",
+      "cv": "Download CV"
     },
     "about": {
       "title": "Over mij",
@@ -29,6 +30,7 @@
     "skills": "Technische vaardigheden",
     "experience": "Projecten & Ervaring",
     "education_title": "Opleiding",
+    "downloadCV": "Download CV",
     "skillCategories": {
       "languages": "Talen",
       "frameworks": "Frameworks & Bibliotheken",
@@ -37,16 +39,16 @@
     },
     "experiences": {
       "qualitynurse": {
-        "date": "2025",
-        "title": "Quality nurse",
-        "company": "Persoonlijk project",
-        "description": "Ontwikkeling van een webplatform voor het beheer van verpleegkundige kwaliteit."
+        "date": "Juli 2024 - Augustus 2025",
+        "title": "Quality Nurse Web Platform",
+        "company": "Quality Nurse Enterprise",
+        "description": "Solo ontwikkelaar die een rustieke PHP-website moderniseert tot een uitgebreide React.js platform. Transformatie van verouderd systeem naar moderne, responsive webapplicatie met 11 medische diensten, 24/7 beschikbaarheid, afspraakplanning en patiëntenbeheersystemen."
       },
       "lasermagique": {
-        "date": "2025",
-        "title": "Laser Magique",
-        "company": "Flutter mobiele applicatie",
-        "description": "Reservering- en voorraadbeheer applicatie ontwikkeld met Flutter."
+        "date": "Juli 2024 - Lopend",
+        "title": "Laser Magique Beheer App",
+        "company": "Laser Magique Entertainment Center",
+        "description": "Solo ontwikkelaar die papiergebaseerd beheersysteem digitaliseert tot uitgebreide Flutter mobiele applicatie. Ontwikkeling van compleet boekingsbeheersysteem, voorraadbeheer, real-time statistieken en betalingsverwerking voor entertainment center operaties."
       }
     },
     "education": {
@@ -63,16 +65,93 @@
     "description": "Ontdek mijn recente werk dat mijn vaardigheden in web- en mobiele ontwikkeling toont.",
     "items": {
       "qualitynurse": {
-        "title": "Quality nurse",
-        "description": "Webplatform gewijd aan het beheer van verpleegkundige kwaliteit met moderne interface en geavanceerde functies.",
-        "tech": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-        "type": "Webapplicatie"
+        "title": "Quality Nurse Website",
+        "description": "Uitgebreid zorgmanagement platform dat verpleegkundige kwaliteitssystemen moderniseert. Bevat 11 geïntegreerde medische diensten, 24/7 beschikbaarheid, afspraakplanning, patiëntenmanagement en real-time monitoring dashboard.",
+        "tech": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "JWT Authenticatie",
+          "Responsive Design"
+        ],
+        "type": "Webapplicatie",
+        "client": "Quality Nurse",
+        "duration": "Juli 2024 - Augustus 2025",
+        "role": "Solo Ontwikkelaar",
+        "status": "completed",
+        "features": [
+          "11 geïntegreerde medische diensten",
+          "24/7 beschikbaarheidssysteem",
+          "Afspraakplanning",
+          "Patiëntenmanagement dashboard",
+          "Real-time monitoring",
+          "Mobiel-responsive design",
+          "Veilige authenticatie",
+          "Meertalige ondersteuning"
+        ],
+        "challenges": [
+          "Modernisering van legacy PHP codebase",
+          "Implementatie van responsive design",
+          "Integratie van meerdere medische diensten",
+          "Gegevensbeveiligingscompliance"
+        ],
+        "results": [
+          "Succesvol gemoderniseerd verouderd systeem",
+          "Verbeterde gebruikerservaring en toegankelijkheid",
+          "Verminderde onderhoudskosten",
+          "Verbeterde systeemschaalbaarheid"
+        ],
+        "longDescription": "Quality Nurse vertegenwoordigt een volledige digitale transformatie van zorgmanagementsystemen. Dit project omvatte het volledig moderniseren van een legacy PHP-gebaseerde website naar een geavanceerd React.js platform. Het systeem integreert nu naadloos 11 verschillende medische diensten, biedt 24/7 beschikbaarheid en geavanceerde patiëntmanagement mogelijkheden. Door zorgvuldige planning en uitvoering hebben we een verouderd systeem getransformeerd naar een modern, schaalbaar platform dat zowel zorgverleners als patiënten effectief bedient."
       },
       "lasermagique": {
-        "title": "Laser Magique",
-        "description": "Flutter mobiele applicatie voor reservering- en voorraadbeheer met intuïtieve interface en real-time synchronisatie.",
-        "tech": ["Flutter", "Dart", "Firebase", "Docker"],
-        "type": "Mobiele applicatie"
+        "title": "Laser Magique Applicatie",
+        "description": "Complete digitale transformatie van entertainment center operaties van papier naar mobiel-first management. Uitgebreid boekingssysteem, voorraadbeheer, real-time statistieken en betalingsgeschiedenis voor laser tag en entertainment diensten.",
+        "tech": [
+          "Flutter",
+          "Dart",
+          "Supabase",
+          "PostgreSQL",
+          "Real-time Database",
+          "Betalingsgeschiedenis",
+          "Push Notificaties",
+          "Statistieken Dashboard"
+        ],
+        "type": "Mobiele Applicatie",
+        "client": "Laser Magique",
+        "duration": "Juli 2024 - Lopend",
+        "role": "Solo Ontwikkelaar",
+        "status": "development",
+        "features": [
+          "Compleet boekingsbeheersysteem",
+          "Real-time voorraadbeheer",
+          "Klantenbeheer dashboard",
+          "Betalingsverwerking integratie",
+          "Statistieken en analyses",
+          "Push notificaties",
+          "Multi-gebruiker toegangscontroles",
+          "Offline modus ondersteuning"
+        ],
+        "challenges": [
+          "Digitalisering van papiergebaseerde processen",
+          "Real-time synchronisatie",
+          "Complexe boekingsalgoritmen",
+          "Betalingsgeschiedenis tracking"
+        ],
+        "results": [
+          "Eliminatie van papiergebaseerd beheer",
+          "Verbeterde operationele efficiëntie",
+          "Real-time business statistieken",
+          "Verbeterde klantervaring"
+        ],
+        "longDescription": "Laser Magique vertegenwoordigt een complete digitale revolutie voor entertainment center operaties. Deze uitgebreide Flutter applicatie transformeert traditioneel papiergebaseerd management naar een gestroomlijnde, mobiel-first oplossing. Het systeem behandelt alles van complexe boekingsalgoritmen tot real-time voorraadbeheer, betalingsgeschiedenis en klantstatistieken. Momenteel in actieve ontwikkeling toont dit project de kracht van moderne mobiele technologie in het revolutioneren van traditionele bedrijfsoperaties.",
+        "nextSteps": [
+          "Creëer gedetailleerde interface voor klantprofiel kaarten",
+          "Integreer uitgebreid profiel tracking systeem",
+          "Voltooi testen en deploy naar productie"
+        ]
       }
     },
     "links": {
@@ -84,7 +163,10 @@
       "live": "Live",
       "development": "In ontwikkeling",
       "completed": "Voltooid",
-      "beta": "Bèta"
+      "beta": "Bèta",
+      "planning": "Planning",
+      "testing": "Testen",
+      "maintenance": "Onderhoud"
     }
   },
   "contact": {
@@ -97,10 +179,43 @@
       "email": "E-mail",
       "message": "Bericht",
       "submit": "Versturen",
+      "sending": "Versturen...",
+      "success": "✅ Uw bericht is succesvol verzonden! Ik neem zo snel mogelijk contact met u op.",
+      "sendAnother": "Verstuur nog een bericht",
       "notice": "⚠️ Dit formulier is nog niet functioneel. Neem direct contact met me op via sociale media."
     }
   },
   "footer": {
     "rights": "Alle rechten voorbehouden."
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "description": "De pagina die u zoekt bestaat niet of is verplaatst.",
+    "goHome": "Terug naar home",
+    "viewProjects": "Bekijk mijn projecten"
+  },
+  "projectDetail": {
+    "backToProjects": "Terug naar projecten",
+    "overview": "Overzicht",
+    "features": "Belangrijkste functies",
+    "technologies": "Gebruikte technologieën",
+    "challenges": "Uitdagingen & Oplossingen",
+    "results": "Resultaten & Impact",
+    "projectInfo": "Projectinformatie",
+    "client": "Klant",
+    "duration": "Duur",
+    "role": "Rol",
+    "status": "Status",
+    "type": "Type",
+    "viewLive": "Bekijk live site",
+    "viewCode": "Bekijk broncode",
+    "viewDemo": "Bekijk demo",
+    "moreProjects": "Meer projecten",
+    "projectGallery": "Projectgalerij",
+    "techStack": "Tech Stack",
+    "keyMetrics": "Belangrijkste metrics",
+    "timeline": "Projecttijdlijn",
+    "testimonial": "Klantgetuigenis",
+    "nextSteps": "Volgende stappen"
   }
 }
