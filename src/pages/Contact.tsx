@@ -1,0 +1,44 @@
+import { useTranslation } from 'react-i18next'
+import SectionContainer from '../components/SectionContainer'
+import ContactForm from '../components/ContactForm'
+import SocialLinks from '../components/SocialLinks'
+import PageTransition from '../components/PageTransition'
+
+export default function Contact() {
+  const { t } = useTranslation()
+
+  return (
+    <PageTransition>
+      <SectionContainer>
+        <div className="grid gap-12 lg:grid-cols-2">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {t('contact.title')}
+            </h1>
+            <p className="mt-6 text-xl text-gray-500 dark:text-gray-400">
+              {t('contact.description')}
+            </p>
+            <div className="mt-8">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                {t('contact.connect')}
+              </h2>
+              <div className="mt-4">
+                <SocialLinks />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800 dark:shadow-gray-900/30">
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {t('contact.form.title')}
+              </h2>
+              <div className="mt-6">
+                <ContactForm />
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionContainer>
+    </PageTransition>
+  )
+}
