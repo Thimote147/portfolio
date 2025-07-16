@@ -1,23 +1,23 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 interface SocialLink {
-  name: string
-  href: string
-  icon: React.ComponentType<{ className?: string }>
+  name: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const socialLinks: SocialLink[] = [
   {
-    name: 'GitHub',
-    href: 'https://github.com/Thimote147',
+    name: "GitHub",
+    href: "https://github.com/Thimote147",
     icon: FaGithub,
   },
   {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/thimot%C3%A9-f%C3%A9tu/',
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/thimot%C3%A9-f%C3%A9tu/",
     icon: FaLinkedin,
-  }
-]
+  },
+];
 
 export default function SocialLinks() {
   return (
@@ -35,5 +35,5 @@ export default function SocialLinks() {
         </a>
       ))}
     </div>
-  )
+  );
 }

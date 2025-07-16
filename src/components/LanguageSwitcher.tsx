@@ -1,18 +1,19 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'fr', name: 'Français', flag: '🇧🇪' },
-  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "fr", name: "Français", flag: "🇧🇪" },
+  { code: "nl", name: "Nederlands", flag: "🇳🇱" },
 ];
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+  const currentLanguage =
+    languages.find((lang) => lang.code === i18n.language) || languages[0];
 
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode);
@@ -29,7 +30,9 @@ export default function LanguageSwitcher() {
           <span className="mr-1">{currentLanguage.flag}</span>
           <span className="font-medium">{currentLanguage.name}</span>
         </span>
-        <ChevronDownIcon className={`h-3 w-3 ml-1 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDownIcon
+          className={`h-3 w-3 ml-1 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+        />
       </button>
 
       {isOpen && (
@@ -40,7 +43,9 @@ export default function LanguageSwitcher() {
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
                 className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-100 transition-colors duration-200 ${
-                  lang.code === i18n.language ? 'bg-blue-500/20 text-blue-600 dark:text-blue-300' : 'text-gray-700 dark:text-white dark:hover:bg-white/10'
+                  lang.code === i18n.language
+                    ? "bg-blue-500/20 text-blue-600 dark:text-blue-300"
+                    : "text-gray-700 dark:text-white dark:hover:bg-white/10"
                 }`}
               >
                 <span className="flex items-center">
@@ -50,8 +55,8 @@ export default function LanguageSwitcher() {
               </button>
             ))}
           </div>
-          <div 
-            className="fixed inset-0 z-40" 
+          <div
+            className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
         </>

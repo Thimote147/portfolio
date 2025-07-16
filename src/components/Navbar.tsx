@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useTranslation } from 'react-i18next'
-import clsx from 'clsx'
-import LanguageSwitcher from './LanguageSwitcher'
-import ThemeToggle from './ThemeToggle'
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
+import clsx from "clsx";
+import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const location = useLocation()
-  const { t } = useTranslation()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const { t } = useTranslation();
 
   const navigation = [
-    { name: t('nav.home'), href: '/' },
-    { name: t('nav.about'), href: '/about' },
-    { name: t('nav.projects'), href: '/projects' },
-    { name: t('nav.contact'), href: '/contact' },
-  ]
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.projects"), href: "/projects" },
+    { name: t("nav.contact"), href: "/contact" },
+  ];
 
   return (
     <header className="glass-effect-navbar border-b border-white/10 fixed top-0 left-0 right-0 z-40">
@@ -36,10 +36,10 @@ export default function Navbar() {
                 key={item.name}
                 to={item.href}
                 className={clsx(
-                  'px-3 py-2 text-sm font-medium rounded-md transition-all duration-200',
+                  "px-3 py-2 text-sm font-medium rounded-md transition-all duration-200",
                   location.pathname === item.href
-                    ? 'text-blue-600 bg-blue-500/20 dark:text-blue-400 dark:bg-blue-500/20'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100 dark:text-white dark:hover:text-blue-400 dark:hover:bg-white/10'
+                    ? "text-blue-600 bg-blue-500/20 dark:text-blue-400 dark:bg-blue-500/20"
+                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-100 dark:text-white dark:hover:text-blue-400 dark:hover:bg-white/10",
                 )}
               >
                 {item.name}
@@ -80,10 +80,10 @@ export default function Navbar() {
                   key={item.name}
                   to={item.href}
                   className={clsx(
-                    'block px-3 py-2 text-base font-medium rounded-md transition-all duration-200',
+                    "block px-3 py-2 text-base font-medium rounded-md transition-all duration-200",
                     location.pathname === item.href
-                      ? 'text-blue-600 bg-blue-500/20 dark:text-blue-400 dark:bg-blue-500/20'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100 dark:text-white dark:hover:text-blue-400 dark:hover:bg-white/10'
+                      ? "text-blue-600 bg-blue-500/20 dark:text-blue-400 dark:bg-blue-500/20"
+                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-100 dark:text-white dark:hover:text-blue-400 dark:hover:bg-white/10",
                   )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -98,5 +98,5 @@ export default function Navbar() {
         )}
       </div>
     </header>
-  )
+  );
 }
