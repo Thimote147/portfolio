@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  portfolio:
+    image: ghcr.io/thimote147/portfolio:latest
+    container_name: portfolio-prod
+    ports:
+      - "7777:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
