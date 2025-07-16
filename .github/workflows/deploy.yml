@@ -32,17 +32,12 @@ jobs:
           ssh -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
             mkdir -p ~/websites
             
-            # Setup SSH key for GitHub on server
-            mkdir -p ~/.ssh
-            echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-            chmod 600 ~/.ssh/id_rsa
-            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-            
             if [ -d "~/websites/portfolio/.git" ]; then
               cd ~/websites/portfolio
               git pull origin main
             else
               rm -rf ~/websites/portfolio
+              # Use existing SSH key on server (don't overwrite)
               git clone git@github.com:Thimote147/portfolio.git ~/websites/portfolio
             fi
           ENDSSH
