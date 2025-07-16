@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "role": "Computer Science student passionate about web & mobile development, creating innovative applications.",
+    "cta": {
+      "work": "View My Projects",
+      "contact": "Get in Touch"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "Computer Science student specializing in application development, mastering modern web technologies and mobile development. Passionate about continuous learning and solving complex problems.",
+      "button": "Learn More"
+    },
+    "projects": {
+      "title": "My Projects",
+      "description": "Discover my recent work, from web applications to Flutter mobile projects.",
+      "button": "View All Projects"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "Passionate application development student with full-stack expertise (frontend, backend, e2e, Azure DevOps). Specializing in modern web technologies and mobile development, I love creating complete and innovative solutions.",
+    "skills": "Technical Skills",
+    "experience": "Projects & Experience",
+    "education_title": "Education",
+    "skillCategories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "databases": "Databases",
+      "tools": "Tools & Technologies"
+    },
+    "experiences": {
+      "qualitynurse": {
+        "date": "2025",
+        "title": "Quality nurse",
+        "company": "Personal Project",
+        "description": "Development of a web platform for nursing care quality management."
+      },
+      "lasermagique": {
+        "date": "2025",
+        "title": "Laser Magique",
+        "company": "Flutter Mobile Application",
+        "description": "Reservation and inventory management application developed with Flutter."
+      }
+    },
+    "education": {
+      "bachelor": {
+        "date": "2023 - In Progress",
+        "title": "Bachelor in Computer Science",
+        "school": "Application Development",
+        "description": "Specialized training in web and mobile development with focus on modern technologies."
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "Discover my recent work showcasing my skills in web and mobile development.",
+    "items": {
+      "qualitynurse": {
+        "title": "Quality nurse",
+        "description": "Web platform dedicated to nursing care quality management with modern interface and advanced features.",
+        "tech": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+        "type": "Web Application"
+      },
+      "lasermagique": {
+        "title": "Laser Magique",
+        "description": "Flutter mobile application for reservation and inventory management with intuitive interface and real-time synchronization.",
+        "tech": ["Flutter", "Dart", "Firebase", "Docker"],
+        "type": "Mobile Application"
+      }
+    },
+    "links": {
+      "live": "View Site",
+      "github": "Source Code",
+      "demo": "Demo"
+    },
+    "status": {
+      "live": "Live",
+      "development": "In Development",
+      "completed": "Completed",
+      "beta": "Beta"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "I'm always open to new opportunities and collaborations. Feel free to reach out!",
+    "connect": "Connect with me",
+    "form": {
+      "title": "Send me a message",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "notice": "⚠️ This form is not functional yet. Please contact me directly via social media."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

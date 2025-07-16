@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Over mij",
+    "projects": "Projecten",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hallo, ik ben",
+    "role": "Informatica student gepassioneerd door web & mobiele ontwikkeling, het creëren van innovatieve applicaties.",
+    "cta": {
+      "work": "Bekijk mijn projecten",
+      "contact": "Neem contact op"
+    },
+    "about": {
+      "title": "Over mij",
+      "description": "Informatica student gespecialiseerd in applicatieontwikkeling, beheersing van moderne webtechnologieën en mobiele ontwikkeling. Gepassioneerd door continu leren en het oplossen van complexe problemen.",
+      "button": "Lees meer"
+    },
+    "projects": {
+      "title": "Mijn projecten",
+      "description": "Ontdek mijn recente werk, van webapplicaties tot Flutter mobiele projecten.",
+      "button": "Bekijk alle projecten"
+    }
+  },
+  "about": {
+    "title": "Over mij",
+    "intro": "Gepassioneerde applicatieontwikkeling student met full-stack expertise (frontend, backend, e2e, Azure DevOps). Gespecialiseerd in moderne webtechnologieën en mobiele ontwikkeling, ik hou van het creëren van complete en innovatieve oplossingen.",
+    "skills": "Technische vaardigheden",
+    "experience": "Projecten & Ervaring",
+    "education_title": "Opleiding",
+    "skillCategories": {
+      "languages": "Talen",
+      "frameworks": "Frameworks & Bibliotheken",
+      "databases": "Databases",
+      "tools": "Tools & Technologieën"
+    },
+    "experiences": {
+      "qualitynurse": {
+        "date": "2025",
+        "title": "Quality nurse",
+        "company": "Persoonlijk project",
+        "description": "Ontwikkeling van een webplatform voor het beheer van verpleegkundige kwaliteit."
+      },
+      "lasermagique": {
+        "date": "2025",
+        "title": "Laser Magique",
+        "company": "Flutter mobiele applicatie",
+        "description": "Reservering- en voorraadbeheer applicatie ontwikkeld met Flutter."
+      }
+    },
+    "education": {
+      "bachelor": {
+        "date": "2023 - Lopend",
+        "title": "Bachelor Informatica",
+        "school": "Applicatieontwikkeling",
+        "description": "Gespecialiseerde opleiding in web- en mobiele ontwikkeling met focus op moderne technologieën."
+      }
+    }
+  },
+  "projects": {
+    "title": "Mijn projecten",
+    "description": "Ontdek mijn recente werk dat mijn vaardigheden in web- en mobiele ontwikkeling toont.",
+    "items": {
+      "qualitynurse": {
+        "title": "Quality nurse",
+        "description": "Webplatform gewijd aan het beheer van verpleegkundige kwaliteit met moderne interface en geavanceerde functies.",
+        "tech": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+        "type": "Webapplicatie"
+      },
+      "lasermagique": {
+        "title": "Laser Magique",
+        "description": "Flutter mobiele applicatie voor reservering- en voorraadbeheer met intuïtieve interface en real-time synchronisatie.",
+        "tech": ["Flutter", "Dart", "Firebase", "Docker"],
+        "type": "Mobiele applicatie"
+      }
+    },
+    "links": {
+      "live": "Bekijk site",
+      "github": "Broncode",
+      "demo": "Demo"
+    },
+    "status": {
+      "live": "Live",
+      "development": "In ontwikkeling",
+      "completed": "Voltooid",
+      "beta": "Bèta"
+    }
+  },
+  "contact": {
+    "title": "Contact opnemen",
+    "description": "Ik sta altijd open voor nieuwe mogelijkheden en samenwerkingen. Neem gerust contact op!",
+    "connect": "Verbind met mij",
+    "form": {
+      "title": "Stuur me een bericht",
+      "name": "Naam",
+      "email": "E-mail",
+      "message": "Bericht",
+      "submit": "Versturen",
+      "notice": "⚠️ Dit formulier is nog niet functioneel. Neem direct contact met me op via sociale media."
+    }
+  },
+  "footer": {
+    "rights": "Alle rechten voorbehouden."
+  }
+}

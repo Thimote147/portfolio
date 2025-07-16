@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Bonjour, je suis",
+    "role": "Étudiant développeur web & mobile passionné par la création d'applications innovantes.",
+    "cta": {
+      "work": "Voir mes projets",
+      "contact": "Me contacter"
+    },
+    "about": {
+      "title": "À propos de moi",
+      "description": "Étudiant en informatique spécialisé en développement d'applications, je maîtrise les technologies web modernes et le développement mobile. Passionné par l'apprentissage continu et la résolution de problèmes complexes.",
+      "button": "En savoir plus"
+    },
+    "projects": {
+      "title": "Mes projets",
+      "description": "Découvrez mes réalisations récentes, des applications web aux projets mobiles avec Flutter.",
+      "button": "Voir tous les projets"
+    }
+  },
+  "about": {
+    "title": "À propos de moi",
+    "intro": "Étudiant passionné en développement d'applications, je maîtrise le développement full-stack (frontend, backend, e2e, DevOps Azure). Spécialisé dans les technologies web modernes et le développement mobile, j'aime créer des solutions complètes et innovantes.",
+    "skills": "Compétences techniques",
+    "experience": "Projets & Expériences",
+    "education_title": "Formation",
+    "skillCategories": {
+      "languages": "Langages",
+      "frameworks": "Frameworks & Bibliothèques",
+      "databases": "Bases de données",
+      "tools": "Outils & Technologies"
+    },
+    "experiences": {
+      "qualitynurse": {
+        "date": "2025",
+        "title": "Quality nurse",
+        "company": "Projet personnel",
+        "description": "Développement d'une plateforme web pour la gestion de la qualité des soins infirmiers."
+      },
+      "lasermagique": {
+        "date": "2025",
+        "title": "Laser Magique",
+        "company": "Application mobile Flutter",
+        "description": "Application de gestion de réservations et de stock développée en Flutter."
+      }
+    },
+    "education": {
+      "bachelor": {
+        "date": "2023 - En cours",
+        "title": "Bachelier en Informatique",
+        "school": "Développement d'Applications",
+        "description": "Formation spécialisée en développement web et mobile avec focus sur les technologies modernes."
+      }
+    }
+  },
+  "projects": {
+    "title": "Mes projets",
+    "description": "Découvrez mes réalisations récentes qui démontrent mes compétences en développement web et mobile.",
+    "items": {
+      "qualitynurse": {
+        "title": "Quality nurse",
+        "description": "Plateforme web dédiée à la gestion de la qualité des soins infirmiers avec interface moderne et fonctionnalités avancées.",
+        "tech": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+        "type": "Application Web"
+      },
+      "lasermagique": {
+        "title": "Laser Magique",
+        "description": "Application mobile Flutter pour la gestion de réservations et de stock avec interface intuitive et synchronisation en temps réel.",
+        "tech": ["Flutter", "Dart", "Firebase", "Docker"],
+        "type": "Application Mobile"
+      }
+    },
+    "links": {
+      "live": "Voir le site",
+      "github": "Code source",
+      "demo": "Démo"
+    },
+    "status": {
+      "live": "En ligne",
+      "development": "En développement",
+      "completed": "Terminé",
+      "beta": "Bêta"
+    }
+  },
+  "contact": {
+    "title": "Me contacter",
+    "description": "Je suis toujours ouvert à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter !",
+    "connect": "Me suivre",
+    "form": {
+      "title": "Envoyez-moi un message",
+      "name": "Nom",
+      "email": "Email", 
+      "message": "Message",
+      "submit": "Envoyer",
+      "notice": "⚠️ Ce formulaire n'est pas encore fonctionnel. Veuillez me contacter directement via les réseaux sociaux."
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  }
+}
