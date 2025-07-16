@@ -96,3 +96,5 @@
   professionnel. Les principaux manques sont du contenu 
   supplémentaire et des fonctionnalités standard qui renforceraient
    votre crédibilité professionnelle.
+
+   REFAIRE LES SEO !

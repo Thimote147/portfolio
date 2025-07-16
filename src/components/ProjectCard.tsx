@@ -29,7 +29,7 @@ export default function ProjectCard({
   client,
 }: ProjectCardProps) {
   const { t } = useTranslation();
-  
+
   const CardContent = () => (
     <div className="professional-card overflow-hidden h-full group cursor-pointer subtle-hover flex flex-col">
       <div className="relative">

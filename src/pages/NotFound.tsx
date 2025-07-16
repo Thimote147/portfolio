@@ -50,7 +50,10 @@ export default function NotFound() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {t("notFound.description", "The page you're looking for doesn't exist or has been moved.")}
+              {t(
+                "notFound.description",
+                "The page you're looking for doesn't exist or has been moved.",
+              )}
             </motion.p>
 
             <motion.div

@@ -67,7 +67,16 @@
       "qualitynurse": {
         "title": "Quality Nurse Website",
         "description": "Uitgebreid zorgmanagement platform dat verpleegkundige kwaliteitssystemen moderniseert. Bevat 11 geïntegreerde medische diensten, 24/7 beschikbaarheid, afspraakplanning, patiëntenmanagement en real-time monitoring dashboard.",
-        "tech": ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "JWT Authenticatie", "Responsive Design"],
+        "tech": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "JWT Authenticatie",
+          "Responsive Design"
+        ],
         "type": "Webapplicatie",
         "client": "Quality Nurse",
         "duration": "Juli 2024 - Augustus 2025",
@@ -100,7 +109,16 @@
       "lasermagique": {
         "title": "Laser Magique Applicatie",
         "description": "Complete digitale transformatie van entertainment center operaties van papier naar mobiel-first management. Uitgebreid boekingssysteem, voorraadbeheer, real-time statistieken en betalingsgeschiedenis voor laser tag en entertainment diensten.",
-        "tech": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Real-time Database", "Betalingsgeschiedenis", "Push Notificaties", "Statistieken Dashboard"],
+        "tech": [
+          "Flutter",
+          "Dart",
+          "Supabase",
+          "PostgreSQL",
+          "Real-time Database",
+          "Betalingsgeschiedenis",
+          "Push Notificaties",
+          "Statistieken Dashboard"
+        ],
         "type": "Mobiele Applicatie",
         "client": "Laser Magique",
         "duration": "Juli 2024 - Lopend",

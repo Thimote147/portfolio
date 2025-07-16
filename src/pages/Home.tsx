@@ -44,7 +44,9 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {t("home.greeting")}{" "}
-              <span className="accent-text whitespace-nowrap">Thimoté Fétu</span>
+              <span className="accent-text whitespace-nowrap">
+                Thimoté Fétu
+              </span>
             </motion.h1>
 
             <motion.p
@@ -63,15 +65,10 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Link to="/projects">
-                <Button size="lg">
-                  {t("home.cta.work")}
-                </Button>
+                <Button size="lg">{t("home.cta.work")}</Button>
               </Link>
               <Link to="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                >
+                <Button size="lg" variant="outline">
                   {t("home.cta.contact")}
                 </Button>
               </Link>
@@ -127,9 +124,7 @@ export default function Home() {
               </p>
               <div className="mt-auto">
                 <Link to="/about">
-                  <Button variant="secondary">
-                    {t("home.about.button")}
-                  </Button>
+                  <Button variant="secondary">{t("home.about.button")}</Button>
                 </Link>
               </div>
             </div>

@@ -67,7 +67,16 @@
       "qualitynurse": {
         "title": "Site web Quality Nurse",
         "description": "Plateforme complète de gestion des soins de santé modernisant les systèmes de qualité des soins infirmiers. Intègre 11 services médicaux, disponibilité 24h/24, planification de rendez-vous, gestion des patients et tableau de bord de surveillance en temps réel.",
-        "tech": ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "Authentification JWT", "Design Responsive"],
+        "tech": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "Express.js",
+          "MySQL",
+          "Authentification JWT",
+          "Design Responsive"
+        ],
         "type": "Application Web",
         "client": "Quality Nurse",
         "duration": "Juillet 2024 - Août 2025",
@@ -100,7 +109,16 @@
       "lasermagique": {
         "title": "Application Laser Magique",
         "description": "Transformation numérique complète des opérations du centre de divertissement, du papier au mobile-first. Système de réservation complet, suivi d'inventaire, statistiques en temps réel et historique des paiements pour les services laser tag et divertissement.",
-        "tech": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Base de données temps réel", "Historique paiements", "Notifications push", "Tableau de bord statistiques"],
+        "tech": [
+          "Flutter",
+          "Dart",
+          "Supabase",
+          "PostgreSQL",
+          "Base de données temps réel",
+          "Historique paiements",
+          "Notifications push",
+          "Tableau de bord statistiques"
+        ],
         "type": "Application Mobile",
         "client": "Laser Magique",
         "duration": "Juillet 2024 - En cours",

@@ -1,7 +1,17 @@
 import { useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, Github, Calendar, User, Clock, Wrench, Target, CheckCircle } from "lucide-react";
+import {
+  ArrowLeft,
+  ExternalLink,
+  Github,
+  Calendar,
+  User,
+  Clock,
+  Wrench,
+  Target,
+  CheckCircle,
+} from "lucide-react";
 import SectionContainer from "../components/SectionContainer";
 import PageTransition from "../components/PageTransition";
 import Button from "../components/Button";
@@ -38,8 +48,14 @@ export default function ProjectDetail() {
       role: t("projects.items.qualitynurse.role"),
       status: "Terminé",
       technologies: [
-        "React.js", "TypeScript", "Tailwind CSS", "Vite", "React Router",
-        "Lucide React", "React Helmet", "Responsive Design"
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vite",
+        "React Router",
+        "Lucide React",
+        "React Helmet",
+        "Responsive Design",
       ],
       features: [
         t("projects.items.qualitynurse.features.0"),
@@ -75,8 +91,15 @@ export default function ProjectDetail() {
       role: t("projects.items.lasermagique.role"),
       status: "En phase de tests",
       technologies: [
-        "Flutter", "Dart", "Supabase", "PostgreSQL", "Firebase", 
-        "Provider", "Material Design 3", "Docker", "GitHub Actions"
+        "Flutter",
+        "Dart",
+        "Supabase",
+        "PostgreSQL",
+        "Firebase",
+        "Provider",
+        "Material Design 3",
+        "Docker",
+        "GitHub Actions",
       ],
       features: [
         t("projects.items.lasermagique.features.0"),
@@ -152,14 +175,14 @@ export default function ProjectDetail() {
               <ArrowLeft className="w-4 h-4 mr-2" />
               {t("projectDetail.backToProjects")}
             </Link>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               {project.title}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
               {project.description}
             </p>
-            
+
             <div className="flex flex-wrap gap-4 mb-8">
               {project.liveUrl && (
                 <a
@@ -200,37 +223,45 @@ export default function ProjectDetail() {
                   <h3 className="font-semibold text-gray-900 dark:text-white">
                     {t("projectDetail.client")}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{project.client}</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {project.client}
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-3" />
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
                     {t("projectDetail.duration")}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{project.duration}</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {project.duration}
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Wrench className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-3" />
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
                     {t("projectDetail.role")}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{project.role}</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {project.role}
+                  </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-3" />
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
                     {t("projectDetail.status")}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{project.status}</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {project.status}
+                  </p>
                 </div>
               </div>
             </div>
@@ -287,7 +318,9 @@ export default function ProjectDetail() {
               {project.features.map((feature, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {feature}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -307,7 +340,9 @@ export default function ProjectDetail() {
               {project.challenges.map((challenge, index) => (
                 <li key={index} className="flex items-start">
                   <Target className="w-5 h-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-gray-300">{challenge}</span>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {challenge}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -327,7 +362,9 @@ export default function ProjectDetail() {
               {project.results.map((result, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-gray-300">{result}</span>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {result}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -348,7 +385,9 @@ export default function ProjectDetail() {
                 {project.nextSteps.map((step, index) => (
                   <li key={index} className="flex items-start">
                     <Clock className="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-300">{step}</span>
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {step}
+                    </span>
                   </li>
                 ))}
               </ul>
