@@ -5,25 +5,20 @@ import Button from "../components/Button";
 import SectionContainer from "../components/SectionContainer";
 import PageTransition from "../components/PageTransition";
 import profileImage from "../assets/me.jpg";
+import cvFile from "../assets/CV_Fétu_Thimoté.pdf";
 
 export default function Home() {
   const { t } = useTranslation();
 
   return (
     <PageTransition>
-      <SectionContainer className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-violet-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        </div>
-
-        <div className="relative z-10 text-center max-w-6xl mx-auto">
+      <SectionContainer className="min-h-screen flex items-center justify-center pt-16">
+        <div className="text-center max-w-5xl mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="glass-effect p-12 floating-animation"
+            transition={{ duration: 0.6 }}
+            className="professional-card p-8 md:p-12"
           >
             <motion.div
               className="flex flex-col items-center mb-8"
@@ -31,45 +26,44 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
             >
-              <div className="relative mb-6">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-500 to-violet-500 shadow-2xl shadow-violet-500/30">
+              <div className="mb-6">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-blue-600 shadow-lg mx-auto">
                   <img
                     src={profileImage}
                     alt="Thimoté Fétu"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-xl"></div>
               </div>
             </motion.div>
 
             <motion.h1
-              className="text-6xl md:text-8xl font-black tracking-tight text-gray-900 dark:text-white mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-tight"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               {t("home.greeting")}{" "}
-              <span className="neon-text text-shadow">Thimoté Fétu</span>
+              <span className="accent-text whitespace-nowrap">Thimoté Fétu</span>
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 mb-8 max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               {t("home.role")}
             </motion.p>
 
             <motion.div
-              className="flex gap-6 justify-center flex-wrap"
+              className="flex gap-4 justify-center flex-wrap"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Link to="/projects">
-                <Button size="lg" className="glow-effect card-hover">
+                <Button size="lg">
                   {t("home.cta.work")}
                 </Button>
               </Link>
@@ -77,27 +71,40 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="glass-effect card-hover"
                 >
                   {t("home.cta.contact")}
                 </Button>
               </Link>
+              <a
+                href={cvFile}
+                download="CV-Thimoté-Fétu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="bg-gray-100 hover:bg-gray-200 text-gray-900 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                >
+                  {t("home.cta.cv")}
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
       </SectionContainer>
 
       <SectionContainer className="py-20">
-        <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+        <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto items-stretch">
           <motion.div
-            className="glass-effect p-8 card-hover"
-            initial={{ opacity: 0, x: -50 }}
+            className="professional-card p-6 subtle-hover h-full flex flex-col"
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mb-4">
+            <div className="flex-1 flex flex-col">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -118,23 +125,25 @@ export default function Home() {
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
                 {t("home.about.description")}
               </p>
-              <Link to="/about">
-                <Button variant="secondary" className="glass-effect card-hover">
-                  {t("home.about.button")}
-                </Button>
-              </Link>
+              <div className="mt-auto">
+                <Link to="/about">
+                  <Button variant="secondary">
+                    {t("home.about.button")}
+                  </Button>
+                </Link>
+              </div>
             </div>
           </motion.div>
 
           <motion.div
-            className="glass-effect p-8 card-hover"
-            initial={{ opacity: 0, x: 50 }}
+            className="professional-card p-6 subtle-hover h-full flex flex-col"
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+            <div className="flex-1 flex flex-col">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -155,11 +164,13 @@ export default function Home() {
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
                 {t("home.projects.description")}
               </p>
-              <Link to="/projects">
-                <Button variant="secondary" className="glass-effect card-hover">
-                  {t("home.projects.button")}
-                </Button>
-              </Link>
+              <div className="mt-auto">
+                <Link to="/projects">
+                  <Button variant="secondary">
+                    {t("home.projects.button")}
+                  </Button>
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>

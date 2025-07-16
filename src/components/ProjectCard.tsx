@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
@@ -10,6 +11,8 @@ interface ProjectCardProps {
   type?: string;
   status?: string;
   icon?: string;
+  projectId?: string;
+  client?: string;
 }
 
 export default function ProjectCard({
@@ -22,21 +25,24 @@ export default function ProjectCard({
   type,
   status,
   icon,
+  projectId,
+  client,
 }: ProjectCardProps) {
   const { t } = useTranslation();
-  return (
-    <div className="glass-effect overflow-hidden h-full group">
+  
+  const CardContent = () => (
+    <div className="professional-card overflow-hidden h-full group cursor-pointer subtle-hover flex flex-col">
       <div className="relative">
-        <div className="h-48 w-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-violet-500/20 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-violet-900/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+        <div className="h-48 w-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center transition-all duration-300 border-b border-gray-200 dark:border-gray-700">
           {image ? (
             <img
-              className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300"
+              className="h-48 w-full object-cover transition-transform duration-300"
               src={image}
               alt={title}
             />
           ) : (
             <div className="flex flex-col items-center justify-center text-center p-8">
-              <div className="w-20 h-20 mb-4 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
+              <div className="w-20 h-20 mb-4 rounded-xl flex items-center justify-center shadow-sm overflow-hidden bg-white border border-gray-300 dark:bg-white/5 dark:border-white/10">
                 {icon ? (
                   <img
                     src={icon}
@@ -45,7 +51,7 @@ export default function ProjectCard({
                   />
                 ) : (
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-8 h-8 text-blue-600 dark:text-blue-400"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -53,9 +59,11 @@ export default function ProjectCard({
                   </svg>
                 )}
               </div>
-              <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                {title}
-              </h4>
+              {client && (
+                <p className="text-sm text-gray-700 dark:text-gray-400 font-medium">
+                  {client}
+                </p>
+              )}
             </div>
           )}
         </div>
@@ -88,8 +96,8 @@ export default function ProjectCard({
         )}
       </div>
 
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <div className="p-6 flex flex-col flex-1">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
           {title}
         </h3>
 
@@ -101,18 +109,18 @@ export default function ProjectCard({
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-300 border border-blue-500/30 backdrop-blur-sm"
+              className="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/20 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 mt-auto">
           {liveUrl && liveUrl !== "#" && (
             <a
               href={liveUrl}
-              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-200 hover:scale-105"
+              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors duration-200"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -137,7 +145,7 @@ export default function ProjectCard({
           {githubUrl && githubUrl !== "#" && (
             <a
               href={githubUrl}
-              className="inline-flex items-center px-4 py-2 bg-white/10 text-white text-sm font-medium rounded-lg hover:bg-white/20 transition-all duration-200 hover:scale-105 border border-white/20"
+              className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-sm font-medium rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 border border-gray-200 dark:border-gray-600"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -155,4 +163,14 @@ export default function ProjectCard({
       </div>
     </div>
   );
+
+  if (projectId) {
+    return (
+      <Link to={`/projects/${projectId}`}>
+        <CardContent />
+      </Link>
+    );
+  }
+
+  return <CardContent />;
 }

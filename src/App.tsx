@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   const location = useLocation();
@@ -16,7 +18,7 @@ function App() {
   }, [location]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 animated-gradient">
+    <div className="min-h-screen flex flex-col professional-bg">
       <Navbar />
       <main className="flex-grow">
         <AnimatePresence mode="wait">
@@ -24,7 +26,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:projectId" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </main>

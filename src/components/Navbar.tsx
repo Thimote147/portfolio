@@ -19,7 +19,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="glass-effect-navbar border-b border-white/10 fixed top-0 left-0 right-0 z-40">
+    <header className="professional-navbar fixed top-0 left-0 right-0 z-40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}

@@ -1,10 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import SectionContainer from "../components/SectionContainer";
 import SkillBadge from "../components/SkillBadge";
 import TimelineItem from "../components/TimelineItem";
 import PageTransition from "../components/PageTransition";
+import Button from "../components/Button";
 import profileImage from "../assets/me.jpg";
+import cvFile from "../assets/CV_Fétu_Thimoté.pdf";
 
 const skillCategories = {
   languages: [
@@ -52,15 +55,17 @@ export default function About() {
   const experiences = [
     {
       date: t("about.experiences.qualitynurse.date"),
-      title: t("about.experiences.qualitynurse.title"),
+      title: t("projects.items.qualitynurse.title"),
       subtitle: t("about.experiences.qualitynurse.company"),
-      description: t("about.experiences.qualitynurse.description"),
+      description: t("projects.items.qualitynurse.description"),
+      projectId: "quality-nurse",
     },
     {
       date: t("about.experiences.lasermagique.date"),
-      title: t("about.experiences.lasermagique.title"),
+      title: t("projects.items.lasermagique.title"),
       subtitle: t("about.experiences.lasermagique.company"),
-      description: t("about.experiences.lasermagique.description"),
+      description: t("projects.items.lasermagique.description"),
+      projectId: "laser-magique",
     },
   ];
 
@@ -103,9 +108,28 @@ export default function About() {
           <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6">
             {t("about.title")}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
             {t("about.intro")}
           </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <a
+              href={cvFile}
+              download="CV-Thimoté-Fétu.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                {t("about.downloadCV")}
+              </Button>
+            </a>
+          </motion.div>
         </motion.div>
       </SectionContainer>
 
@@ -125,7 +149,7 @@ export default function About() {
               ([category, skills], index) => (
                 <motion.div
                   key={category}
-                  className="glass-effect p-8 card-hover"
+                  className="professional-card p-8 subtle-hover"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -186,13 +210,16 @@ export default function About() {
                 {experiences.map((experience, index) => (
                   <motion.div
                     key={index}
-                    className="glass-effect p-6 card-hover"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <TimelineItem {...experience} />
+                    <Link to={`/projects/${experience.projectId}`}>
+                      <div className="professional-card p-6 subtle-hover cursor-pointer">
+                        <TimelineItem {...experience} />
+                      </div>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -232,7 +259,7 @@ export default function About() {
                 {education.map((edu, index) => (
                   <motion.div
                     key={index}
-                    className="glass-effect p-6 card-hover"
+                    className="professional-card p-6 subtle-hover"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}

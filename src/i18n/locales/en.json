@@ -10,7 +10,8 @@
     "role": "Computer Science student passionate about web & mobile development, creating innovative applications.",
     "cta": {
       "work": "View My Projects",
-      "contact": "Get in Touch"
+      "contact": "Get in Touch",
+      "cv": "Download CV"
     },
     "about": {
       "title": "About Me",
@@ -29,6 +30,7 @@
     "skills": "Technical Skills",
     "experience": "Projects & Experience",
     "education_title": "Education",
+    "downloadCV": "Download CV",
     "skillCategories": {
       "languages": "Languages",
       "frameworks": "Frameworks & Libraries",
@@ -37,16 +39,16 @@
     },
     "experiences": {
       "qualitynurse": {
-        "date": "2025",
-        "title": "Quality nurse",
-        "company": "Personal Project",
-        "description": "Development of a web platform for nursing care quality management."
+        "date": "July 2024 - August 2025",
+        "title": "Quality Nurse Web Platform",
+        "company": "Quality Nurse Enterprise",
+        "description": "Solo developer modernizing a rustic PHP-based website into a comprehensive React.js platform. Transformed outdated system into modern, responsive web application featuring 11 medical services with 24/7 availability, appointment scheduling, and patient management systems."
       },
       "lasermagique": {
-        "date": "2025",
+        "date": "July 2024 - Ongoing",
         "title": "Laser Magique",
-        "company": "Flutter Mobile Application",
-        "description": "Reservation and inventory management application developed with Flutter."
+        "company": "Laser Magique Entertainment Center",
+        "description": "Solo developer digitizing paper-based management system into comprehensive Flutter mobile application. Developed complete booking management, inventory tracking, real-time statistics, and payment processing system for entertainment center operations."
       }
     },
     "education": {
@@ -63,16 +65,75 @@
     "description": "Discover my recent work showcasing my skills in web and mobile development.",
     "items": {
       "qualitynurse": {
-        "title": "Quality nurse",
-        "description": "Web platform dedicated to nursing care quality management with modern interface and advanced features.",
-        "tech": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-        "type": "Web Application"
+        "title": "Quality Nurse Website",
+        "description": "Comprehensive healthcare management platform modernizing nursing care quality systems. Features 11 integrated medical services, 24/7 availability, appointment scheduling, patient management, and real-time monitoring dashboard.",
+        "tech": ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "JWT Authentication", "Responsive Design"],
+        "type": "Web Application",
+        "client": "Quality Nurse",
+        "duration": "July 2024 - August 2025",
+        "role": "Solo Developer",
+        "status": "completed",
+        "features": [
+          "11 integrated medical services",
+          "24/7 availability system",
+          "Appointment scheduling",
+          "Patient management dashboard",
+          "Real-time monitoring",
+          "Mobile-responsive design",
+          "Secure authentication",
+          "Multi-language support"
+        ],
+        "challenges": [
+          "Modernizing legacy PHP codebase",
+          "Implementing responsive design",
+          "Integrating multiple medical services",
+          "Ensuring data security compliance"
+        ],
+        "results": [
+          "Successfully modernized outdated system",
+          "Improved user experience and accessibility",
+          "Reduced maintenance overhead",
+          "Enhanced system scalability"
+        ],
+        "longDescription": "Quality Nurse represents a comprehensive digital transformation of healthcare management systems. This project involved completely modernizing a legacy PHP-based website into a sophisticated React.js platform. The system now seamlessly integrates 11 distinct medical services, providing round-the-clock availability and advanced patient management capabilities. Through careful planning and execution, we transformed an outdated system into a modern, scalable platform that serves both healthcare providers and patients effectively."
       },
       "lasermagique": {
-        "title": "Laser Magique",
-        "description": "Flutter mobile application for reservation and inventory management with intuitive interface and real-time synchronization.",
-        "tech": ["Flutter", "Dart", "Firebase", "Docker"],
-        "type": "Mobile Application"
+        "title": "Laser Magique Application",
+        "description": "Complete digital transformation of entertainment center operations from paper-based to mobile-first management. Comprehensive booking system, inventory tracking, real-time statistics, and payment history for laser tag and entertainment services.",
+        "tech": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Real-time Database", "Payment History", "Push Notifications", "Statistics Dashboard"],
+        "type": "Mobile Application",
+        "client": "Laser Magique",
+        "duration": "July 2024 - Ongoing",
+        "role": "Solo Developer",
+        "status": "development",
+        "features": [
+          "Complete booking management system",
+          "Real-time inventory tracking",
+          "Customer management dashboard",
+          "Payment history tracking",
+          "Statistics and reports",
+          "Push notifications",
+          "Multi-user access controls",
+          "Offline mode support"
+        ],
+        "challenges": [
+          "Digitizing paper-based processes",
+          "Real-time synchronization",
+          "Complex booking algorithms",
+          "Payment system integration"
+        ],
+        "results": [
+          "Eliminated paper-based management",
+          "Improved operational efficiency",
+          "Real-time business insights",
+          "Enhanced customer experience"
+        ],
+        "longDescription": "Laser Magique represents a complete digital revolution for entertainment center operations. This comprehensive Flutter application transforms traditional paper-based management into a streamlined, mobile-first solution. The system handles everything from complex booking algorithms to real-time inventory management, payment history, and customer statistics. Currently in active development, this project showcases the power of modern mobile technology in revolutionizing traditional business operations.",
+        "nextSteps": [
+          "Create detailed interface for client profile cards",
+          "Integrate comprehensive profile tracking system",
+          "Complete testing and deploy to production"
+        ]
       }
     },
     "links": {
@@ -84,7 +145,10 @@
       "live": "Live",
       "development": "In Development",
       "completed": "Completed",
-      "beta": "Beta"
+      "beta": "Beta",
+      "planning": "Planning",
+      "testing": "Testing",
+      "maintenance": "Maintenance"
     }
   },
   "contact": {
@@ -97,10 +161,43 @@
       "email": "Email",
       "message": "Message",
       "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "✅ Your message has been sent successfully! I will get back to you as soon as possible.",
+      "sendAnother": "Send another message",
       "notice": "⚠️ This form is not functional yet. Please contact me directly via social media."
     }
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "goHome": "Go Back Home",
+    "viewProjects": "View My Projects"
+  },
+  "projectDetail": {
+    "backToProjects": "Back to Projects",
+    "overview": "Overview",
+    "features": "Key Features",
+    "technologies": "Technologies Used",
+    "challenges": "Challenges & Solutions",
+    "results": "Results & Impact",
+    "projectInfo": "Project Information",
+    "client": "Client",
+    "duration": "Duration",
+    "role": "Role",
+    "status": "Status",
+    "type": "Type",
+    "viewLive": "View Live Site",
+    "viewCode": "View Source Code",
+    "viewDemo": "View Demo",
+    "moreProjects": "More Projects",
+    "projectGallery": "Project Gallery",
+    "techStack": "Tech Stack",
+    "keyMetrics": "Key Metrics",
+    "timeline": "Project Timeline",
+    "testimonial": "Client Testimonial",
+    "nextSteps": "Next Steps"
   }
 }
