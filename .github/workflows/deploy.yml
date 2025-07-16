@@ -34,14 +34,23 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
             mkdir -p ~/websites
+            
+            # Setup SSH key for GitHub on server
+            mkdir -p ~/.ssh
+            echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            
             if [ -d "~/websites/portfolio/.git" ]; then
               cd ~/websites/portfolio
               git pull origin main
             else
               rm -rf ~/websites/portfolio
-              git clone https://github.com/Thimote147/portfolio.git ~/websites/portfolio
+              git clone git@github.com:Thimote147/portfolio.git ~/websites/portfolio
             fi
           ENDSSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
   deploy:
     needs: build
@@ -59,7 +68,7 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
             cd ~/websites/portfolio
             docker-compose down || true
-            docker rm -f portfolio-prod || true
+            docker rm -f portfolio || true
             docker-compose build --no-cache
             docker-compose up -d
           ENDSSH
