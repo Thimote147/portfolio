@@ -1,4 +1,4 @@
-name: Build & Deploy Portfolio to Server
+name: Build & Deploy React.js Site to Server
 
 on:
   push:
@@ -20,29 +20,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Submit dependencies
+        run: echo "Submitting build-time dependencies for ecosystem..."
+
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Clone/update repository on server
+      - name: Create deployment directory on server
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
-            mkdir -p ~/websites
-            
-            if [ -d "~/websites/portfolio/.git" ]; then
-              cd ~/websites/portfolio
-              git pull origin main
-            else
-              rm -rf ~/websites/portfolio
-              # Use existing SSH key on server (don't overwrite)
-              git clone git@github.com:Thimote147/portfolio.git ~/websites/portfolio
-            fi
-          ENDSSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p ~/websites/portfolio"
+
+      - name: Upload project files to server
+        run: |
+          tar --exclude=node_modules --exclude=.git --exclude=.github --exclude=dist -czf portfolio.tar.gz .
+          scp portfolio.tar.gz ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "cd ~/websites && rm -rf portfolio && mkdir portfolio && tar -xzf portfolio.tar.gz -C portfolio && rm portfolio.tar.gz"
 
   deploy:
     needs: build
@@ -51,13 +47,13 @@ jobs:
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
       - name: Build and restart Docker container
         run: |
-          ssh -i ~/.ssh/id_rsa ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
             cd ~/websites/portfolio
             docker-compose down || true
             docker rm -f portfolio || true
