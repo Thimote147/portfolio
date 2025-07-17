@@ -1,23 +1,30 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import SectionContainer from "../components/SectionContainer";
-import SkillBadge from "../components/SkillBadge";
 import SkillBadgeWithLevel from "../components/SkillBadgeWithLevel";
-import TimelineItem from "../components/TimelineItem";
 import PageTransition from "../components/PageTransition";
 import Button from "../components/Button";
 import useSEO from "../hooks/useSEO";
 import profileImage from "../assets/me.jpg";
 import cvFile from "../assets/CV_Fétu_Thimoté.pdf";
 
+interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  credentialId?: string;
+}
+
 const calculateYears = (startYear: number) => {
   const currentYear = new Date().getFullYear();
   return Math.max(1, currentYear - startYear + 1);
 };
 
-const calculateLevel = (years: number): "Débutant" | "Intermédiaire" | "Expert" => {
+const calculateLevel = (
+  years: number,
+): "Débutant" | "Intermédiaire" | "Expert" => {
   if (years >= 5) return "Expert";
   if (years >= 3) return "Intermédiaire";
   return "Débutant";
@@ -51,10 +58,7 @@ const skillCategories = {
     createSkill("Tailwind CSS", 2024),
     createSkill("Vite", 2024),
   ],
-  databases: [
-    createSkill("PostgreSQL", 2024),
-    createSkill("SQLite", 2024),
-  ],
+  databases: [createSkill("PostgreSQL", 2024), createSkill("SQLite", 2024)],
   tools: [
     createSkill("Android Studio", 2025),
     createSkill("API REST", 2024),
@@ -73,23 +77,26 @@ const skillCategories = {
 
 export default function About() {
   const { t } = useTranslation();
-  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
+  const [expandedCategories, setExpandedCategories] = useState<
+    Record<string, boolean>
+  >({});
 
   const toggleCategory = (category: string) => {
-    setExpandedCategories(prev => ({
+    setExpandedCategories((prev) => ({
       ...prev,
-      [category]: !prev[category]
+      [category]: !prev[category],
     }));
   };
 
   useSEO({
     title: "À propos - Thimoté Fétu | Développeur Web & Mobile",
-    description: "Découvrez mon parcours, mes compétences et mes expériences en développement. Étudiant passionné maîtrisant React, TypeScript, Flutter et Node.js avec projets Quality Nurse et Laser Magique.",
-    keywords: "à propos, compétences, expérience, formation, React, TypeScript, Flutter, Node.js, développeur étudiant, parcours développeur, GitHub",
+    description:
+      "Découvrez mon parcours, mes compétences et mes expériences en développement. Étudiant passionné maîtrisant React, TypeScript, Flutter et Node.js avec projets Quality Nurse et Laser Magique.",
+    keywords:
+      "à propos, compétences, expérience, formation, React, TypeScript, Flutter, Node.js, développeur étudiant, parcours développeur, GitHub",
     ogImage: "https://thimotefetu.fr/me.jpg",
-    canonical: "https://thimotefetu.fr/about"
+    canonical: "https://thimotefetu.fr/about",
   });
-
 
   const education = [
     {
@@ -100,10 +107,9 @@ export default function About() {
     },
   ];
 
-  const certifications = [
+  const certifications: Certification[] = [
     // Ajoute tes vraies certifications ici
   ];
-
 
   return (
     <PageTransition>
@@ -192,7 +198,10 @@ export default function About() {
                     {t(`about.skillCategories.${category}`)}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {(expandedCategories[category] ? skills : skills.slice(0, 4)).map((skill) => (
+                    {(expandedCategories[category]
+                      ? skills
+                      : skills.slice(0, 4)
+                    ).map((skill) => (
                       <SkillBadgeWithLevel
                         key={skill.name}
                         name={skill.name}
@@ -210,15 +219,35 @@ export default function About() {
                         {expandedCategories[category] ? (
                           <>
                             <span>Voir moins</span>
-                            <svg className="w-4 h-4 ml-1 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            <svg
+                              className="w-4 h-4 ml-1 transform rotate-180"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
                             </svg>
                           </>
                         ) : (
                           <>
                             <span>Voir plus ({skills.length - 4})</span>
-                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            <svg
+                              className="w-4 h-4 ml-1"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
                             </svg>
                           </>
                         )}
@@ -242,8 +271,18 @@ export default function About() {
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center flex items-center justify-center">
             <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg mr-4 flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg
+                className="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
               </svg>
             </div>
             {t("about.certifications_title")}
@@ -267,17 +306,35 @@ export default function About() {
                   >
                     <div className="flex items-center mb-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-white">{edu.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{edu.subtitle}</p>
-                        <p className="text-xs text-gray-500 dark:text-gray-500">{edu.date}</p>
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                          {edu.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          {edu.subtitle}
+                        </p>
+                        <p className="text-xs text-gray-500 dark:text-gray-500">
+                          {edu.date}
+                        </p>
                       </div>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300">{edu.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      {edu.description}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -290,35 +347,55 @@ export default function About() {
               viewport={{ once: true }}
             >
               <div className="space-y-6">
-                {certifications.length > 0 ? certifications.map((cert, index) => (
-                  <motion.div
-                    key={index}
-                    className="professional-card p-6 subtle-hover"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                {certifications.length > 0 ? (
+                  certifications.map((cert, index) => (
+                    <motion.div
+                      key={index}
+                      className="professional-card p-6 subtle-hover"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
+                          <svg
+                            className="w-6 h-6 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                            {cert.title}
+                          </h3>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {cert.issuer}
+                          </p>
+                          <p className="text-xs text-gray-500 dark:text-gray-500">
+                            {cert.date}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-white">{cert.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{cert.issuer}</p>
-                        <p className="text-xs text-gray-500 dark:text-gray-500">{cert.date}</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">{cert.description}</p>
-                    {cert.credentialId && (
-                      <div className="text-xs text-gray-500 dark:text-gray-500">
-                        ID: {cert.credentialId}
-                      </div>
-                    )}
-                  </motion.div>
-                )) : (
+                      <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        {cert.description}
+                      </p>
+                      {cert.credentialId && (
+                        <div className="text-xs text-gray-500 dark:text-gray-500">
+                          ID: {cert.credentialId}
+                        </div>
+                      )}
+                    </motion.div>
+                  ))
+                ) : (
                   <motion.div
                     className="professional-card p-6 text-center"
                     initial={{ opacity: 0, y: 20 }}
@@ -328,12 +405,24 @@ export default function About() {
                   >
                     <div className="flex items-center justify-center mb-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                       </div>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400">Certifications à venir...</p>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      Certifications à venir...
+                    </p>
                   </motion.div>
                 )}
               </div>
@@ -341,8 +430,6 @@ export default function About() {
           </div>
         </motion.div>
       </SectionContainer>
-
-
     </PageTransition>
   );
 }

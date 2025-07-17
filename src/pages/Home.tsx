@@ -13,10 +13,12 @@ export default function Home() {
 
   useSEO({
     title: "Thimoté Fétu - Développeur Web & Mobile Full-Stack",
-    description: "Développeur passionné spécialisé en React, TypeScript, Flutter et Node.js. Création d'applications web et mobile modernes. Étudiant en informatique avec projets Quality Nurse et Laser Magique.",
-    keywords: "développeur web, développeur mobile, React, TypeScript, Flutter, Node.js, full-stack, portfolio, Thimoté Fétu, étudiant développeur, applications web, applications mobile",
+    description:
+      "Développeur passionné spécialisé en React, TypeScript, Flutter et Node.js. Création d'applications web et mobile modernes. Étudiant en informatique avec projets Quality Nurse et Laser Magique.",
+    keywords:
+      "développeur web, développeur mobile, React, TypeScript, Flutter, Node.js, full-stack, portfolio, Thimoté Fétu, étudiant développeur, applications web, applications mobile",
     ogImage: "https://thimotefetu.fr/og-image.jpg",
-    canonical: "https://thimotefetu.fr/"
+    canonical: "https://thimotefetu.fr/",
   });
 
   return (
