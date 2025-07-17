@@ -3,9 +3,20 @@ import SectionContainer from "../components/SectionContainer";
 import ContactForm from "../components/ContactForm";
 import SocialLinks from "../components/SocialLinks";
 import PageTransition from "../components/PageTransition";
+import useSEO from "../hooks/useSEO";
 
 export default function Contact() {
   const { t } = useTranslation();
+
+  useSEO({
+    title: "Contact - Thimoté Fétu | Développeur Web & Mobile",
+    description:
+      "Contactez Thimoté Fétu pour vos projets de développement web et mobile. Formulaire de contact, réseaux sociaux et informations pour collaborer sur vos applications React, Flutter et Node.js.",
+    keywords:
+      "contact, collaboration, projets, développement web, développement mobile, devis, freelance, React, Flutter, Node.js",
+    ogImage: "https://thimotefetu.fr/og-contact.jpg",
+    canonical: "https://thimotefetu.fr/contact",
+  });
 
   return (
     <PageTransition>

@@ -47,10 +47,16 @@ export const useContactForm = (): UseContactFormReturn => {
       setError(null);
 
       try {
-        // EmailJS configuration - these should be environment variables
-        const serviceId = "YOUR_SERVICE_ID";
-        const templateId = "YOUR_TEMPLATE_ID";
-        const publicKey = "YOUR_PUBLIC_KEY";
+        // EmailJS configuration from environment variables
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey) {
+          throw new Error(
+            "EmailJS configuration is missing. Please check your environment variables.",
+          );
+        }
 
         await emailjs.send(
           serviceId,

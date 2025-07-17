@@ -3,10 +3,12 @@
     "home": "Accueil",
     "about": "À propos",
     "projects": "Projets",
+    "services": "Services",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "home": {
-    "greeting": "Salut, je suis",
+    "greeting": "Bonjour, je suis",
     "role": "Étudiant développeur web & mobile passionné par la création d'applications innovantes.",
     "cta": {
       "work": "Voir mes projets",
@@ -27,9 +29,11 @@
   "about": {
     "title": "À propos de moi",
     "intro": "Étudiant passionné en développement d'applications, je maîtrise le développement full-stack (frontend, backend, e2e, DevOps Azure). Spécialisé dans les technologies web modernes et le développement mobile, j'aime créer des solutions complètes et innovantes.",
+    "personalStory": "Mon parcours de développeur a commencé par curiosité pour les technologies. Ce qui m'anime le plus, c'est la résolution de problèmes complexes et la création d'applications qui ont un impact réel. J'aime apprendre continuellement et partager mes connaissances avec la communauté de développeurs. En dehors du code, je pratique le sport, j'aime la musique et je suis passionné par l'innovation technologique.",
     "skills": "Compétences techniques",
     "experience": "Projets & Expériences",
     "education_title": "Formation",
+    "certifications_title": "Certifications & Formations",
     "downloadCV": "Télécharger CV",
     "skillCategories": {
       "languages": "Langages",
@@ -49,6 +53,18 @@
         "title": "Laser Magique",
         "company": "Laser Magique",
         "description": "Développeur solo digitalisant un système de gestion papier en application mobile Flutter complète. Développement d'un système complet de gestion de réservations, suivi d'inventaire, statistiques en temps réel et traitement des paiements pour les opérations du centre de divertissement."
+      },
+      "circle": {
+        "date": "Avril 2025 - En cours",
+        "title": "Contributeur Open Source",
+        "company": "Circle - Project Management",
+        "description": "Contribution au projet open source Circle, une interface de gestion de projet inspirée de Linear. Développement avec Next.js, TypeScript et composants shadcn/ui pour créer une expérience utilisateur moderne et intuitive."
+      },
+      "portfolio": {
+        "date": "Décembre 2024 - En cours",
+        "title": "Développeur Full-Stack",
+        "company": "Portfolio Personnel",
+        "description": "Conception et développement complet de mon portfolio personnel avec React, TypeScript et Tailwind CSS. Implémentation d'animations Framer Motion, support multi-langues et optimisation SEO."
       }
     },
     "education": {
@@ -152,6 +168,90 @@
           "Intégrer le système de suivi complet des profils",
           "Finaliser les tests et déployer en production"
         ]
+      },
+      "portfolio": {
+        "title": "Portfolio Personnel",
+        "description": "Portfolio personnel moderne et responsive construit avec React, TypeScript et Tailwind CSS. Présente mes projets, compétences et expériences de développement avec un design élégant et des animations fluides.",
+        "tech": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "React Router",
+          "i18next",
+          "Vite",
+          "Hébergement Cloudflare"
+        ],
+        "type": "Portfolio Web",
+        "client": "Personnel",
+        "duration": "Décembre 2024 - En cours",
+        "role": "Développeur Solo",
+        "status": "development",
+        "features": [
+          "Design moderne et responsive",
+          "Mode sombre/clair",
+          "Support multi-langues (FR/EN/NL)",
+          "Animations fluides",
+          "Formulaire de contact fonctionnel",
+          "CV téléchargeable",
+          "Optimisé pour le SEO",
+          "Performance optimisée"
+        ],
+        "challenges": [
+          "Design responsive sur tous les appareils",
+          "Animations performantes",
+          "Optimisation SEO",
+          "Support multi-langues complet"
+        ],
+        "results": [
+          "Portfolio professionnel complet",
+          "Expérience utilisateur optimisée",
+          "Présence en ligne renforcée",
+          "Vitrine technique moderne"
+        ],
+        "longDescription": "Ce portfolio personnel représente une vitrine complète de mes compétences en développement frontend moderne. Construit avec React et TypeScript, il utilise Tailwind CSS pour un design moderne et responsive. Le site propose une expérience utilisateur fluide avec des animations Framer Motion, un support multi-langues complet et un formulaire de contact fonctionnel. Optimisé pour la performance et le SEO, il démontre ma maîtrise des technologies web modernes."
+      },
+      "circle": {
+        "title": "Circle - Project Management",
+        "description": "Interface de gestion de projet inspirée de Linear, construite avec Next.js et TypeScript. Application web moderne pour suivre les issues, projets et équipes avec une interface utilisateur élégante et responsive.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "React",
+          "Project Management",
+          "Team Collaboration",
+          "Responsive Design"
+        ],
+        "type": "Application Web",
+        "client": "Projet Open Source",
+        "duration": "Avril 2025",
+        "role": "Contributeur",
+        "status": "development",
+        "features": [
+          "Gestion des issues et projets",
+          "Interface inspirée de Linear",
+          "Design moderne et responsive",
+          "Collaboration d'équipe",
+          "Composants shadcn/ui",
+          "Performance optimisée",
+          "Experience utilisateur fluide",
+          "Open source MIT"
+        ],
+        "challenges": [
+          "Reproduire l'expérience Linear",
+          "Architecture composants réutilisables",
+          "Performance et réactivité",
+          "Design system cohérent"
+        ],
+        "results": [
+          "Interface de gestion moderne",
+          "Code open source réutilisable",
+          "Design system complet",
+          "Performance optimisée"
+        ],
+        "longDescription": "Circle est une application de gestion de projet web inspirée par Linear, développée avec Next.js et TypeScript. Ce projet démontre ma capacité à créer des interfaces utilisateur modernes et complexes en utilisant les dernières technologies frontend. L'application offre une expérience utilisateur fluide pour la gestion des projets, issues et équipes, avec un design élégant et responsive construit avec Tailwind CSS et shadcn/ui."
       }
     },
     "links": {
@@ -183,6 +283,45 @@
       "success": "✅ Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
       "sendAnother": "Envoyer un autre message",
       "notice": "⚠️ Ce formulaire n'est pas encore fonctionnel. Veuillez me contacter directement via les réseaux sociaux."
+    }
+  },
+  "services": {
+    "title": "Mes services",
+    "description": "Solutions complètes de développement web et mobile adaptées à vos besoins",
+    "items": {
+      "web": {
+        "title": "Développement Web",
+        "description": "Sites web modernes et responsives avec React, TypeScript et les dernières technologies"
+      },
+      "mobile": {
+        "title": "Applications Mobile",
+        "description": "Applications natives et cross-platform avec Flutter et React Native"
+      },
+      "fullstack": {
+        "title": "Développement Full-Stack",
+        "description": "Solutions complètes frontend et backend avec bases de données et APIs"
+      },
+      "consulting": {
+        "title": "Conseil Technique",
+        "description": "Audit de code, architecture et optimisation de vos projets existants"
+      },
+      "maintenance": {
+        "title": "Maintenance & Support",
+        "description": "Maintenance continue, mises à jour et support technique"
+      },
+      "optimization": {
+        "title": "Optimisation",
+        "description": "Amélioration des performances, SEO et expérience utilisateur"
+      }
+    },
+    "process": {
+      "title": "Mon processus de travail"
+    },
+    "cta": {
+      "title": "Prêt à démarrer votre projet ?",
+      "description": "Contactez-moi pour discuter de vos besoins et obtenir un devis personnalisé",
+      "contact": "Me contacter",
+      "portfolio": "Voir mes projets"
     }
   },
   "footer": {
@@ -217,5 +356,40 @@
     "timeline": "Chronologie du projet",
     "testimonial": "Témoignage client",
     "nextSteps": "Prochaines étapes"
+  },
+  "github": {
+    "title": "Activité GitHub",
+    "error": "Erreur lors du chargement des données GitHub",
+    "stats": {
+      "repositories": "Repositories",
+      "stars": "Stars",
+      "followers": "Followers"
+    },
+    "topRepos": "Projets populaires",
+    "noDescription": "Pas de description disponible",
+    "viewProfile": "Voir le profil GitHub"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Articles techniques et tutoriels sur le développement web et mobile",
+    "featured": "Articles populaires",
+    "recent": "Articles récents",
+    "readMore": "Lire la suite",
+    "categories": {
+      "all": "Tous",
+      "react": "React",
+      "javascript": "JavaScript",
+      "flutter": "Flutter",
+      "nodejs": "Node.js",
+      "tutorial": "Tutoriel",
+      "tips": "Conseils"
+    },
+    "newsletter": {
+      "title": "Restez informé",
+      "description": "Abonnez-vous à ma newsletter pour recevoir les derniers articles et conseils",
+      "placeholder": "Votre email",
+      "subscribe": "S'abonner",
+      "notice": "Pas de spam, seulement du contenu de qualité !"
+    }
   }
 }
