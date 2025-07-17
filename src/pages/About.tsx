@@ -1,73 +1,95 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import SectionContainer from "../components/SectionContainer";
 import SkillBadge from "../components/SkillBadge";
+import SkillBadgeWithLevel from "../components/SkillBadgeWithLevel";
 import TimelineItem from "../components/TimelineItem";
 import PageTransition from "../components/PageTransition";
 import Button from "../components/Button";
+import useSEO from "../hooks/useSEO";
 import profileImage from "../assets/me.jpg";
 import cvFile from "../assets/CV_Fétu_Thimoté.pdf";
 
+const calculateYears = (startYear: number) => {
+  const currentYear = new Date().getFullYear();
+  return Math.max(1, currentYear - startYear + 1);
+};
+
+const calculateLevel = (years: number): "Débutant" | "Intermédiaire" | "Expert" => {
+  if (years >= 5) return "Expert";
+  if (years >= 3) return "Intermédiaire";
+  return "Débutant";
+};
+
+const createSkill = (name: string, startYear: number) => {
+  const years = calculateYears(startYear);
+  return { name, level: calculateLevel(years), years };
+};
+
 const skillCategories = {
   languages: [
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "Java",
-    "C",
-    "C++",
-    "Dart",
-    "HTML",
-    "CSS",
+    createSkill("C", 2024),
+    createSkill("C++", 2022),
+    createSkill("CSS", 2023),
+    createSkill("Dart", 2025),
+    createSkill("HTML", 2023),
+    createSkill("Java", 2023),
+    createSkill("JavaScript", 2023),
+    createSkill("Python", 2022),
+    createSkill("TypeScript", 2024),
   ],
   frameworks: [
-    "React",
-    "Tailwind CSS",
-    "Bootstrap",
-    "Vite",
-    "Flutter",
-    "React Native",
-    "Node.js",
-    "Express",
-    "Spring Boot",
+    createSkill("Bootstrap", 2023),
+    createSkill("Express", 2024),
+    createSkill("Flutter", 2025),
+    createSkill("Node.js", 2024),
+    createSkill("React", 2024),
+    createSkill("React Native", 2025),
+    createSkill("Spring Boot", 2025),
+    createSkill("Tailwind CSS", 2024),
+    createSkill("Vite", 2024),
   ],
-  databases: ["PostgreSQL", "SQLite"],
+  databases: [
+    createSkill("PostgreSQL", 2024),
+    createSkill("SQLite", 2024),
+  ],
   tools: [
-    "Git",
-    "GitHub",
-    "GitLab",
-    "Docker",
-    "Azure DevOps",
-    "VS Code",
-    "Android Studio",
-    "JetBrains Suite",
-    "API REST",
-    "OVH",
-    "Google Cloud",
-    "Cloudflare",
+    createSkill("Android Studio", 2025),
+    createSkill("API REST", 2024),
+    createSkill("Azure DevOps", 2024),
+    createSkill("Cloudflare", 2024),
+    createSkill("Docker", 2024),
+    createSkill("Git", 2022),
+    createSkill("GitHub", 2022),
+    createSkill("GitLab", 2025),
+    createSkill("Google Cloud", 2025),
+    createSkill("JetBrains Suite", 2022),
+    createSkill("OVH", 2024),
+    createSkill("VS Code", 2023),
   ],
 };
 
 export default function About() {
   const { t } = useTranslation();
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
 
-  const experiences = [
-    {
-      date: t("about.experiences.qualitynurse.date"),
-      title: t("projects.items.qualitynurse.title"),
-      subtitle: t("about.experiences.qualitynurse.company"),
-      description: t("projects.items.qualitynurse.description"),
-      projectId: "quality-nurse",
-    },
-    {
-      date: t("about.experiences.lasermagique.date"),
-      title: t("projects.items.lasermagique.title"),
-      subtitle: t("about.experiences.lasermagique.company"),
-      description: t("projects.items.lasermagique.description"),
-      projectId: "laser-magique",
-    },
-  ];
+  const toggleCategory = (category: string) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [category]: !prev[category]
+    }));
+  };
+
+  useSEO({
+    title: "À propos - Thimoté Fétu | Développeur Web & Mobile",
+    description: "Découvrez mon parcours, mes compétences et mes expériences en développement. Étudiant passionné maîtrisant React, TypeScript, Flutter et Node.js avec projets Quality Nurse et Laser Magique.",
+    keywords: "à propos, compétences, expérience, formation, React, TypeScript, Flutter, Node.js, développeur étudiant, parcours développeur, GitHub",
+    ogImage: "https://thimotefetu.fr/me.jpg",
+    canonical: "https://thimotefetu.fr/about"
+  });
+
 
   const education = [
     {
@@ -77,6 +99,11 @@ export default function About() {
       description: t("about.education.bachelor.description"),
     },
   ];
+
+  const certifications = [
+    // Ajoute tes vraies certifications ici
+  ];
+
 
   return (
     <PageTransition>
@@ -110,6 +137,9 @@ export default function About() {
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
             {t("about.intro")}
+          </p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto mb-8">
+            {t("about.personalStory")}
           </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -161,17 +191,40 @@ export default function About() {
                     </div>
                     {t(`about.skillCategories.${category}`)}
                   </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {skills.map((skill) => (
-                      <motion.div
-                        key={skill}
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <SkillBadge name={skill} />
-                      </motion.div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {(expandedCategories[category] ? skills : skills.slice(0, 4)).map((skill) => (
+                      <SkillBadgeWithLevel
+                        key={skill.name}
+                        name={skill.name}
+                        level={skill.level}
+                        years={skill.years}
+                      />
                     ))}
                   </div>
+                  {skills.length > 4 && (
+                    <div className="mt-4 text-center">
+                      <button
+                        onClick={() => toggleCategory(category)}
+                        className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
+                      >
+                        {expandedCategories[category] ? (
+                          <>
+                            <span>Voir moins</span>
+                            <svg className="w-4 h-4 ml-1 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </>
+                        ) : (
+                          <>
+                            <span>Voir plus ({skills.length - 4})</span>
+                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  )}
                 </motion.div>
               ),
             )}
@@ -179,82 +232,29 @@ export default function About() {
         </motion.div>
       </SectionContainer>
 
-      <SectionContainer className="py-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid gap-12 lg:grid-cols-2">
+      <SectionContainer className="py-20 bg-gray-50 dark:bg-gray-900/50">
+        <motion.div
+          className="max-w-6xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg mr-4 flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            {t("about.certifications_title")}
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg mr-4 flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    />
-                  </svg>
-                </div>
-                {t("about.experience")}
-              </h2>
-              <div className="space-y-6">
-                {experiences.map((experience, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Link to={`/projects/${experience.projectId}`}>
-                      <div className="professional-card p-6 subtle-hover cursor-pointer">
-                        <TimelineItem {...experience} />
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-violet-500 rounded-lg mr-4 flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 14l9-5-9-5-9 5 9 5z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                    />
-                  </svg>
-                </div>
-                {t("about.education_title")}
-              </h2>
               <div className="space-y-6">
                 {education.map((edu, index) => (
                   <motion.div
@@ -265,14 +265,84 @@ export default function About() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <TimelineItem {...edu} />
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-white">{edu.title}</h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{edu.subtitle}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-500">{edu.date}</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300">{edu.description}</p>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-6">
+                {certifications.length > 0 ? certifications.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    className="professional-card p-6 subtle-hover"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-white">{cert.title}</h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{cert.issuer}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-500">{cert.date}</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">{cert.description}</p>
+                    {cert.credentialId && (
+                      <div className="text-xs text-gray-500 dark:text-gray-500">
+                        ID: {cert.credentialId}
+                      </div>
+                    )}
+                  </motion.div>
+                )) : (
+                  <motion.div
+                    className="professional-card p-6 text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-400">Certifications à venir...</p>
+                  </motion.div>
+                )}
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </SectionContainer>
+
+
     </PageTransition>
   );
 }
