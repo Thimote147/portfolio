@@ -14,8 +14,8 @@ export default function Contact() {
       "Contactez Thimoté Fétu pour vos projets de développement web et mobile. Formulaire de contact, réseaux sociaux et informations pour collaborer sur vos applications React, Flutter et Node.js.",
     keywords:
       "contact, collaboration, projets, développement web, développement mobile, devis, freelance, React, Flutter, Node.js",
-    ogImage: "https://thimotefetu.fr/og-contact.jpg",
-    canonical: "https://thimotefetu.fr/contact",
+    ogImage: "https://thimotefetu.be/og-contact.jpg",
+    canonical: "https://thimotefetu.be/contact",
   });
 
   return (

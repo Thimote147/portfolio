@@ -15,8 +15,8 @@ export default function Projects() {
       "Découvrez mes projets de développement web et mobile : Quality Nurse (React/TypeScript), Laser Magique (Flutter), Circle (Next.js) et mon portfolio. Projets complets avec technologies modernes.",
     keywords:
       "projets, portfolio, Quality Nurse, Laser Magique, Circle, React, TypeScript, Flutter, Next.js, développement web, développement mobile, projets étudiants",
-    ogImage: "https://thimotefetu.fr/og-projects.jpg",
-    canonical: "https://thimotefetu.fr/projects",
+    ogImage: "https://thimotefetu.be/og-projects.jpg",
+    canonical: "https://thimotefetu.be/projects",
   });
 
   const projects = [
@@ -68,11 +68,11 @@ export default function Projects() {
       technologies: t("projects.items.circle.tech", {
         returnObjects: true,
       }) as string[],
-      liveUrl: "https://circle.thimotefetu.fr",
+      liveUrl: "https://circle.thimotefetu.be",
       githubUrl: "https://github.com/Thimote147/circle",
       type: t("projects.items.circle.type"),
       status: "In Development",
-      icon: "https://circle.thimotefetu.fr/favicon.ico",
+      icon: "https://circle.thimotefetu.be/favicon.ico",
       projectId: "circle",
       client: t("projects.items.circle.client"),
     },

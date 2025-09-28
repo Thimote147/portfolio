@@ -50,7 +50,7 @@ export const useSEO = (seoData: SEOData) => {
     if (ogUrl)
       ogUrl.setAttribute(
         "content",
-        `https://thimotefetu.fr${location.pathname}`,
+        `https://thimotefetu.be${location.pathname}`,
       );
     if (ogImage && seoData.ogImage)
       ogImage.setAttribute("content", seoData.ogImage);
@@ -73,7 +73,7 @@ export const useSEO = (seoData: SEOData) => {
     if (twitterUrl)
       twitterUrl.setAttribute(
         "content",
-        `https://thimotefetu.fr${location.pathname}`,
+        `https://thimotefetu.be${location.pathname}`,
       );
     if (twitterImage && seoData.ogImage)
       twitterImage.setAttribute("content", seoData.ogImage);
@@ -87,7 +87,7 @@ export const useSEO = (seoData: SEOData) => {
     }
     canonical.setAttribute(
       "href",
-      seoData.canonical || `https://thimotefetu.fr${location.pathname}`,
+      seoData.canonical || `https://thimotefetu.be${location.pathname}`,
     );
 
     // Update language
