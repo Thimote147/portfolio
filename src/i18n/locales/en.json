@@ -39,10 +39,10 @@
     },
     "experiences": {
       "qualitynurse": {
-        "date": "July 2024 - August 2025",
-        "title": "Quality Nurse Web Platform",
-        "company": "Quality Nurse Enterprise",
-        "description": "Solo developer modernizing a rustic PHP-based website into a comprehensive React.js platform. Transformed outdated system into modern, responsive web application featuring 11 medical services with 24/7 availability, appointment scheduling, and patient management systems."
+        "date": "July 2024 - September 2024",  
+        "title": "Web Developer",
+        "company": "Quality Nurse",
+        "description": "Complete creation of showcase website for Quality Nurse, home nursing service with 25+ years of experience. Development of modern web presence featuring 11 medical services, professional team, Brussels coverage area, and 24/7 emergency contact. Site deployed on qualitynurse.be."
       },
       "lasermagique": {
         "date": "July 2024 - Ongoing",
@@ -66,45 +66,45 @@
     "items": {
       "qualitynurse": {
         "title": "Quality Nurse Website",
-        "description": "Comprehensive healthcare management platform modernizing nursing care quality systems. Features 11 integrated medical services, 24/7 availability, appointment scheduling, patient management, and real-time monitoring dashboard.",
+        "description": "Modern showcase website for Quality Nurse, home nursing service with 25+ years of experience. Complete presentation of 11 medical services, professional team, Brussels coverage area, and 24/7 emergency contact system.",
         "tech": [
           "React.js",
           "TypeScript",
           "Tailwind CSS",
-          "Node.js",
-          "Express.js",
-          "MySQL",
-          "JWT Authentication",
-          "Responsive Design"
+          "Vite",
+          "React Router",
+          "Framer Motion",
+          "Responsive Design",
+          "SEO Optimized"
         ],
-        "type": "Web Application",
-        "client": "Quality Nurse",
-        "duration": "July 2024 - August 2025",
-        "role": "Solo Developer",
-        "status": "completed",
+        "type": "Showcase Website",
+        "client": "Quality Nurse - Jean-Charles Tonnelle",
+        "duration": "July 2024 - September 2024",
+        "role": "Solo Web Developer",
+        "status": "Completed & Live",
         "features": [
-          "11 integrated medical services",
-          "24/7 availability system",
-          "Appointment scheduling",
-          "Patient management dashboard",
-          "Real-time monitoring",
-          "Mobile-responsive design",
-          "Secure authentication",
-          "Multi-language support"
+          "11 detailed medical services (bathing, wound care, perfusions, etc.)",
+          "24/7 emergency service available",
+          "Professional team presentation (25+ years experience)",
+          "Geographic coverage area (5 Brussels municipalities)",
+          "Contact system and appointment booking",
+          "Mobile-first responsive design",
+          "SEO optimization for local visibility",
+          "Modern and accessible interface"
         ],
         "challenges": [
-          "Modernizing legacy PHP codebase",
-          "Implementing responsive design",
-          "Integrating multiple medical services",
-          "Ensuring data security compliance"
+          "Complete modernization of legacy visual identity",
+          "Clear organization of 11 complex medical services",
+          "Local search optimization (nursing care Brussels)",
+          "Accessible interface for elderly clientele"
         ],
         "results": [
-          "Successfully modernized outdated system",
-          "Improved user experience and accessibility",
-          "Reduced maintenance overhead",
-          "Enhanced system scalability"
+          "Modern and professional website live on qualitynurse.be",
+          "Clear presentation of services and 25+ years expertise",
+          "Facilitated emergency contact for patients",
+          "Improved visibility for home care in Brussels"
         ],
-        "longDescription": "Quality Nurse represents a comprehensive digital transformation of healthcare management systems. This project involved completely modernizing a legacy PHP-based website into a sophisticated React.js platform. The system now seamlessly integrates 11 distinct medical services, providing round-the-clock availability and advanced patient management capabilities. Through careful planning and execution, we transformed an outdated system into a modern, scalable platform that serves both healthcare providers and patients effectively."
+        "longDescription": "Quality Nurse represents the complete creation of a modern showcase website for a home nursing service established for over 25 years. The project involved developing a professional web presence for Jean-Charles Tonnelle and his team, specialized in palliative care, perfusions, and enteral nutrition. The website clearly presents the 11 medical services (complete bathing, medication administration, wound care, perfusions, etc.), highlights the team's professional expertise, and facilitates 24/7 emergency contact. Deployed on qualitynurse.be, the site effectively serves patients in the municipalities of Uccle, Ixelles, Forest, Watermael-Boitsfort and surroundings."
       },
       "lasermagique": {
         "title": "Laser Magique Application",
@@ -152,6 +152,90 @@
           "Integrate comprehensive profile tracking system",
           "Complete testing and deploy to production"
         ]
+      },
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "description": "Modern and responsive personal portfolio built with React, TypeScript and Tailwind CSS. Showcases my projects, skills and development experiences with elegant design and smooth animations.",
+        "tech": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "React Router",
+          "i18next",
+          "Vite",
+          "Cloudflare Hosting"
+        ],
+        "type": "Web Portfolio",
+        "client": "Personal",
+        "duration": "December 2024 - Ongoing",
+        "role": "Solo Developer",
+        "status": "development",
+        "features": [
+          "Modern responsive design",
+          "Smooth Framer Motion animations",
+          "Multi-language support (FR/EN/NL)",
+          "Interactive contact form",
+          "GitHub integration",
+          "SEO optimized",
+          "Dark mode support",
+          "Mobile-first approach"
+        ],
+        "challenges": [
+          "Responsive design across all devices",
+          "Performance animations",
+          "SEO optimization",
+          "Complete multi-language support"
+        ],
+        "results": [
+          "Complete professional portfolio",
+          "Optimized user experience",
+          "Enhanced online presence",
+          "Modern technical showcase"
+        ],
+        "longDescription": "This personal portfolio represents a comprehensive showcase of my modern frontend development skills. Built with React and TypeScript, it uses Tailwind CSS for modern and responsive design. The site offers a smooth user experience with Framer Motion animations, complete multi-language support, and a functional contact form. Optimized for performance and SEO, it demonstrates my mastery of modern web technologies."
+      },
+      "circle": {
+        "title": "Circle - Project Management",
+        "description": "Linear-inspired project management interface built with Next.js and TypeScript. Modern web application for tracking issues, projects and teams with elegant and responsive user interface.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "React",
+          "Project Management",
+          "Team Collaboration",
+          "Responsive Design"
+        ],
+        "type": "Web Application",
+        "client": "Open Source Project",
+        "duration": "April 2025",
+        "role": "Contributor",
+        "status": "development",
+        "features": [
+          "Issues and project management",
+          "Linear-inspired interface",
+          "Modern responsive design",
+          "Team collaboration",
+          "shadcn/ui components",
+          "Optimized performance",
+          "Smooth user experience",
+          "MIT open source"
+        ],
+        "challenges": [
+          "Reproduce Linear experience",
+          "Reusable component architecture",
+          "Performance and responsiveness",
+          "Consistent design system"
+        ],
+        "results": [
+          "Modern management interface",
+          "Reusable open source code",
+          "Enhanced development skills",
+          "Complete design system"
+        ],
+        "longDescription": "Circle is a Linear-inspired web project management application developed with Next.js and TypeScript. This project demonstrates my ability to create modern and complex user interfaces using the latest frontend technologies. The application offers a smooth user experience for managing projects, issues and teams, with elegant and responsive design built with Tailwind CSS and shadcn/ui."
       }
     },
     "links": {
@@ -167,6 +251,11 @@
       "planning": "Planning",
       "testing": "Testing",
       "maintenance": "Maintenance"
+    },
+    "notFound": {
+      "title": "Project Not Found",
+      "description": "The project you're looking for doesn't exist or has been moved.",
+      "backButton": "Back to Projects"
     }
   },
   "contact": {
@@ -181,7 +270,6 @@
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "✅ Your message has been sent successfully! I will get back to you as soon as possible.",
-      "sendAnother": "Send another message",
       "notice": "⚠️ This form is not functional yet. Please contact me directly via social media."
     }
   },
@@ -217,5 +305,17 @@
     "timeline": "Project Timeline",
     "testimonial": "Client Testimonial",
     "nextSteps": "Next Steps"
+  },
+  "github": {
+    "title": "GitHub Activity",
+    "error": "Error loading GitHub data",
+    "stats": {
+      "repositories": "Repositories",
+      "stars": "Stars",
+      "followers": "Followers"
+    },
+    "topRepos": "Popular Projects",
+    "noDescription": "No description available",
+    "viewProfile": "View GitHub Profile"
   }
 }

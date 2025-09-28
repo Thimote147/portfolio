@@ -16,7 +16,6 @@ interface UseContactFormReturn {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
   handleSubmit: (e: React.FormEvent) => Promise<void>;
-  resetForm: () => void;
 }
 
 export const useContactForm = (): UseContactFormReturn => {
@@ -47,7 +46,6 @@ export const useContactForm = (): UseContactFormReturn => {
       setError(null);
 
       try {
-        // EmailJS configuration from environment variables
         const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -86,16 +84,6 @@ export const useContactForm = (): UseContactFormReturn => {
     [formData],
   );
 
-  const resetForm = useCallback(() => {
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-    setIsSuccess(false);
-    setError(null);
-  }, []);
-
   return {
     formData,
     isLoading,
@@ -103,6 +91,5 @@ export const useContactForm = (): UseContactFormReturn => {
     error,
     handleInputChange,
     handleSubmit,
-    resetForm,
   };
 };

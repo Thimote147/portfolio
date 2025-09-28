@@ -11,7 +11,6 @@ export default function ContactForm() {
     error,
     handleInputChange,
     handleSubmit,
-    resetForm,
   } = useContactForm();
 
   return (
@@ -27,12 +26,6 @@ export default function ContactForm() {
           <p className="text-sm text-green-800 dark:text-green-200">
             {t("contact.form.success")}
           </p>
-          <button
-            onClick={resetForm}
-            className="mt-2 text-sm text-green-800 dark:text-green-200 underline hover:no-underline"
-          >
-            {t("contact.form.sendAnother")}
-          </button>
         </div>
       )}
 
