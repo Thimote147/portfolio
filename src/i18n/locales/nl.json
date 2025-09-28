@@ -39,10 +39,10 @@
     },
     "experiences": {
       "qualitynurse": {
-        "date": "Juli 2024 - Augustus 2025",
-        "title": "Quality Nurse Web Platform",
-        "company": "Quality Nurse Enterprise",
-        "description": "Solo ontwikkelaar die een rustieke PHP-website moderniseert tot een uitgebreide React.js platform. Transformatie van verouderd systeem naar moderne, responsive webapplicatie met 11 medische diensten, 24/7 beschikbaarheid, afspraakplanning en patiëntenbeheersystemen."
+        "date": "Juli 2024 - September 2024",
+        "title": "Web Ontwikkelaar",
+        "company": "Quality Nurse",
+        "description": "Volledige creatie van showcase website voor Quality Nurse, thuisverpleging service met 25+ jaar ervaring. Ontwikkeling van moderne webpresentatie met 11 medische diensten, professioneel team, Brussel dekkingsgebied en 24/7 noodcontact. Site gedeployed op qualitynurse.be."
       },
       "lasermagique": {
         "date": "Juli 2024 - Lopend",
@@ -66,45 +66,45 @@
     "items": {
       "qualitynurse": {
         "title": "Quality Nurse Website",
-        "description": "Uitgebreid zorgmanagement platform dat verpleegkundige kwaliteitssystemen moderniseert. Bevat 11 geïntegreerde medische diensten, 24/7 beschikbaarheid, afspraakplanning, patiëntenmanagement en real-time monitoring dashboard.",
+        "description": "Moderne showcase website voor Quality Nurse, thuisverpleging service met 25+ jaar ervaring. Complete presentatie van 11 medische diensten, professioneel team, Brussel dekkingsgebied en 24/7 noodcontact systeem.",
         "tech": [
           "React.js",
           "TypeScript",
           "Tailwind CSS",
-          "Node.js",
-          "Express.js",
-          "MySQL",
-          "JWT Authenticatie",
-          "Responsive Design"
+          "Vite",
+          "React Router",
+          "Framer Motion",
+          "Responsive Design",
+          "SEO Geoptimaliseerd"
         ],
-        "type": "Webapplicatie",
-        "client": "Quality Nurse",
-        "duration": "Juli 2024 - Augustus 2025",
-        "role": "Solo Ontwikkelaar",
-        "status": "completed",
+        "type": "Showcase Website",
+        "client": "Quality Nurse - Jean-Charles Tonnelle",
+        "duration": "Juli 2024 - September 2024",
+        "role": "Solo Web Ontwikkelaar",
+        "status": "Voltooid & Live",
         "features": [
-          "11 geïntegreerde medische diensten",
-          "24/7 beschikbaarheidssysteem",
-          "Afspraakplanning",
-          "Patiëntenmanagement dashboard",
-          "Real-time monitoring",
-          "Mobiel-responsive design",
-          "Veilige authenticatie",
-          "Meertalige ondersteuning"
+          "11 gedetailleerde medische diensten (verzorging, wondverzorging, perfusies, etc.)",
+          "24/7 noodservice beschikbaar",
+          "Professioneel team presentatie (25+ jaar ervaring)",
+          "Geografisch dekkingsgebied (5 Brussel gemeenten)",
+          "Contact systeem en afspraak booking",
+          "Mobiel-first responsive design",
+          "SEO optimalisatie voor lokale zichtbaarheid",
+          "Moderne en toegankelijke interface"
         ],
         "challenges": [
-          "Modernisering van legacy PHP codebase",
-          "Implementatie van responsive design",
-          "Integratie van meerdere medische diensten",
-          "Gegevensbeveiligingscompliance"
+          "Complete modernisering van legacy visuele identiteit",
+          "Duidelijke organisatie van 11 complexe medische diensten",
+          "Lokale zoekmachine optimalisatie (verpleging Brussel)",
+          "Toegankelijke interface voor oudere clientèle"
         ],
         "results": [
-          "Succesvol gemoderniseerd verouderd systeem",
-          "Verbeterde gebruikerservaring en toegankelijkheid",
-          "Verminderde onderhoudskosten",
-          "Verbeterde systeemschaalbaarheid"
+          "Moderne en professionele website live op qualitynurse.be",
+          "Duidelijke presentatie van diensten en 25+ jaar expertise",
+          "Vergemakkelijkt noodcontact voor patiënten",
+          "Verbeterde zichtbaarheid voor thuiszorg in Brussel"
         ],
-        "longDescription": "Quality Nurse vertegenwoordigt een volledige digitale transformatie van zorgmanagementsystemen. Dit project omvatte het volledig moderniseren van een legacy PHP-gebaseerde website naar een geavanceerd React.js platform. Het systeem integreert nu naadloos 11 verschillende medische diensten, biedt 24/7 beschikbaarheid en geavanceerde patiëntmanagement mogelijkheden. Door zorgvuldige planning en uitvoering hebben we een verouderd systeem getransformeerd naar een modern, schaalbaar platform dat zowel zorgverleners als patiënten effectief bedient."
+        "longDescription": "Quality Nurse vertegenwoordigt de volledige creatie van een moderne showcase website voor een thuisverpleging service gevestigd sinds meer dan 25 jaar. Het project omvatte het ontwikkelen van een professionele webpresentatie voor Jean-Charles Tonnelle en zijn team, gespecialiseerd in palliatieve zorg, perfusies en enterale voeding. De website presenteert duidelijk de 11 medische diensten (complete verzorging, medicatie toediening, wondverzorging, perfusies, etc.), benadrukt de professionele expertise van het team en vergemakkelijkt 24/7 noodcontact. Gedeployed op qualitynurse.be, bedient de site effectief patiënten in de gemeenten Ukkel, Elsene, Vorst, Watermaal-Bosvoorde en omgeving."
       },
       "lasermagique": {
         "title": "Laser Magique Applicatie",
@@ -152,6 +152,90 @@
           "Integreer uitgebreid profiel tracking systeem",
           "Voltooi testen en deploy naar productie"
         ]
+      },
+      "portfolio": {
+        "title": "Persoonlijke Portfolio",
+        "description": "Moderne en responsieve persoonlijke portfolio gebouwd met React, TypeScript en Tailwind CSS. Toont mijn projecten, vaardigheden en ontwikkelingservaringen met elegant design en vloeiende animaties.",
+        "tech": [
+          "React.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "React Router",
+          "i18next",
+          "Vite",
+          "Cloudflare Hosting"
+        ],
+        "type": "Web Portfolio",
+        "client": "Persoonlijk",
+        "duration": "December 2024 - Lopend",
+        "role": "Solo Ontwikkelaar",
+        "status": "development",
+        "features": [
+          "Modern responsief design",
+          "Vloeiende Framer Motion animaties",
+          "Meertalige ondersteuning (FR/EN/NL)",
+          "Interactief contactformulier",
+          "GitHub integratie",
+          "SEO geoptimaliseerd",
+          "Dark mode ondersteuning",
+          "Mobile-first benadering"
+        ],
+        "challenges": [
+          "Responsief design op alle apparaten",
+          "Performance animaties",
+          "SEO optimalisatie",
+          "Volledige meertalige ondersteuning"
+        ],
+        "results": [
+          "Volledige professionele portfolio",
+          "Geoptimaliseerde gebruikerservaring",
+          "Verbeterde online aanwezigheid",
+          "Moderne technische showcase"
+        ],
+        "longDescription": "Deze persoonlijke portfolio vertegenwoordigt een uitgebreide showcase van mijn moderne frontend ontwikkelingsvaardigheden. Gebouwd met React en TypeScript, gebruikt het Tailwind CSS voor modern en responsief design. De site biedt een vloeiende gebruikerservaring met Framer Motion animaties, volledige meertalige ondersteuning en een functioneel contactformulier. Geoptimaliseerd voor prestaties en SEO, toont het mijn beheersing van moderne web technologieën."
+      },
+      "circle": {
+        "title": "Circle - Project Management",
+        "description": "Linear-geïnspireerde projectmanagement interface gebouwd met Next.js en TypeScript. Moderne webapplicatie voor het bijhouden van issues, projecten en teams met elegante en responsieve gebruikersinterface.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
+          "React",
+          "Project Management",
+          "Team Collaboration",
+          "Responsive Design"
+        ],
+        "type": "Webapplicatie",
+        "client": "Open Source Project",
+        "duration": "April 2025",
+        "role": "Bijdrager",
+        "status": "development",
+        "features": [
+          "Issues en projectbeheer",
+          "Linear-geïnspireerde interface",
+          "Modern responsief design",
+          "Team samenwerking",
+          "shadcn/ui componenten",
+          "Geoptimaliseerde prestaties",
+          "Vloeiende gebruikerservaring",
+          "MIT open source"
+        ],
+        "challenges": [
+          "Linear ervaring reproduceren",
+          "Herbruikbare component architectuur",
+          "Prestaties en responsiviteit",
+          "Consistent design systeem"
+        ],
+        "results": [
+          "Moderne management interface",
+          "Herbruikbare open source code",
+          "Verbeterde ontwikkelingsvaardigheden",
+          "Volledig design systeem"
+        ],
+        "longDescription": "Circle is een Linear-geïnspireerde web projectmanagement applicatie ontwikkeld met Next.js en TypeScript. Dit project toont mijn vermogen om moderne en complexe gebruikersinterfaces te creëren met de nieuwste frontend technologieën. De applicatie biedt een vloeiende gebruikerservaring voor het beheren van projecten, issues en teams, met elegant en responsief design gebouwd met Tailwind CSS en shadcn/ui."
       }
     },
     "links": {
@@ -167,6 +251,11 @@
       "planning": "Planning",
       "testing": "Testen",
       "maintenance": "Onderhoud"
+    },
+    "notFound": {
+      "title": "Project Niet Gevonden",
+      "description": "Het project dat u zoekt bestaat niet of is verplaatst.",
+      "backButton": "Terug naar Projecten"
     }
   },
   "contact": {
@@ -181,7 +270,6 @@
       "submit": "Versturen",
       "sending": "Versturen...",
       "success": "✅ Uw bericht is succesvol verzonden! Ik neem zo snel mogelijk contact met u op.",
-      "sendAnother": "Verstuur nog een bericht",
       "notice": "⚠️ Dit formulier is nog niet functioneel. Neem direct contact met me op via sociale media."
     }
   },
@@ -217,5 +305,17 @@
     "timeline": "Projecttijdlijn",
     "testimonial": "Klantgetuigenis",
     "nextSteps": "Volgende stappen"
+  },
+  "github": {
+    "title": "GitHub Activiteit",
+    "error": "Fout bij het laden van GitHub gegevens",
+    "stats": {
+      "repositories": "Repositories",
+      "stars": "Stars",
+      "followers": "Volgers"
+    },
+    "topRepos": "Populaire Projecten",
+    "noDescription": "Geen beschrijving beschikbaar",
+    "viewProfile": "Bekijk GitHub Profiel"
   }
 }

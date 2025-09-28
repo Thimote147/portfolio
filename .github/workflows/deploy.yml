@@ -20,6 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build application
+        env:
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+        run: npm run build
+
       - name: Submit dependencies
         run: echo "Submitting build-time dependencies for ecosystem..."
 
@@ -57,6 +64,17 @@ jobs:
 
           # Test SSH connection
           ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful'"
+
+      - name: Create environment file on server
+        run: |
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
+            cd ~/websites/portfolio
+            cat > .env << EOF
+          VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+          EOF
+          ENDSSH
 
       - name: Build and restart Docker container
         run: |

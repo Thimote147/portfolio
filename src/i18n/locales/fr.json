@@ -43,10 +43,10 @@
     },
     "experiences": {
       "qualitynurse": {
-        "date": "Juillet 2024 - Août 2025",
-        "title": "Quality Nurse",
+        "date": "Juillet 2024 - Septembre 2024",
+        "title": "Développeur Web",
         "company": "Quality Nurse",
-        "description": "Développeur solo modernisant un site PHP rustique en plateforme React.js complète. Transformation d'un système obsolète en application web moderne et responsive avec 11 services médicaux, disponibilité 24h/24, planification de rendez-vous et systèmes de gestion des patients."
+        "description": "Création complète du site vitrine pour Quality Nurse, service de soins infirmiers à domicile avec 25+ années d'expérience. Développement d'une présence web moderne présentant 11 prestations médicales, équipe professionnelle, zone de couverture Bruxelles et contact d'urgence 24h/24. Site déployé sur qualitynurse.be."
       },
       "lasermagique": {
         "date": "Juillet 2024 - En cours",
@@ -82,45 +82,45 @@
     "items": {
       "qualitynurse": {
         "title": "Site web Quality Nurse",
-        "description": "Plateforme complète de gestion des soins de santé modernisant les systèmes de qualité des soins infirmiers. Intègre 11 services médicaux, disponibilité 24h/24, planification de rendez-vous, gestion des patients et tableau de bord de surveillance en temps réel.",
+        "description": "Site vitrine moderne pour Quality Nurse, service de soins infirmiers à domicile avec 25+ années d'expérience. Présentation complète des 11 prestations médicales, équipe professionnelle, zone de couverture Bruxelles et système de contact d'urgence 24h/24.",
         "tech": [
           "React.js",
           "TypeScript",
           "Tailwind CSS",
-          "Node.js",
-          "Express.js",
-          "MySQL",
-          "Authentification JWT",
-          "Design Responsive"
+          "Vite",
+          "React Router",
+          "Framer Motion",
+          "Responsive Design",
+          "SEO Optimisé"
         ],
-        "type": "Application Web",
-        "client": "Quality Nurse",
-        "duration": "Juillet 2024 - Août 2025",
-        "role": "Développeur Solo",
-        "status": "completed",
+        "type": "Site Vitrine",
+        "client": "Quality Nurse - Jean-Charles Tonnelle",
+        "duration": "Juillet 2024 - Septembre 2024",
+        "role": "Développeur Web Solo",
+        "status": "Terminé & En ligne",
         "features": [
-          "11 services médicaux intégrés",
-          "Système de disponibilité 24h/24",
-          "Planification de rendez-vous",
-          "Tableau de bord de gestion des patients",
-          "Surveillance en temps réel",
-          "Design responsive mobile",
-          "Authentification sécurisée",
-          "Support multi-langues"
+          "11 prestations médicales détaillées (toilette, soins plaies, perfusions, etc.)",
+          "Service d'urgence 24h/24, 7j/7 disponible",
+          "Présentation équipe professionnelle (25+ ans expérience)",
+          "Zone de couverture géographique (5 communes Bruxelles)",
+          "Système de contact et prise de rendez-vous",
+          "Design responsive mobile-first",
+          "Optimisation SEO pour visibilité locale",
+          "Interface moderne et accessible"
         ],
         "challenges": [
-          "Modernisation du code PHP legacy",
-          "Implémentation du design responsive",
-          "Intégration de multiples services médicaux",
-          "Conformité de sécurité des données"
+          "Modernisation complète de l'identité visuelle legacy",
+          "Organisation claire de 11 services médicaux complexes",
+          "Optimisation pour recherche locale (soins infirmiers Bruxelles)",
+          "Interface accessible pour clientèle âgée"
         ],
         "results": [
-          "Modernisation réussie du système obsolète",
-          "Amélioration de l'expérience utilisateur et accessibilité",
-          "Réduction des coûts de maintenance",
-          "Amélioration de l'évolutivité du système"
+          "Site moderne et professionnel en ligne sur qualitynurse.be",
+          "Présentation claire des services et expertise 25+ ans",
+          "Contact d'urgence facilité pour patients",
+          "Visibilité améliorée pour soins à domicile Bruxelles"
         ],
-        "longDescription": "Quality Nurse représente une transformation numérique complète des systèmes de gestion des soins de santé. Ce projet impliquait la modernisation complète d'un site web legacy basé sur PHP en plateforme React.js sophistiquée. Le système intègre maintenant de manière transparente 11 services médicaux distincts, offrant une disponibilité 24h/24 et des capacités avancées de gestion des patients. Grâce à une planification et exécution soigneuses, nous avons transformé un système obsolète en plateforme moderne et évolutive qui sert efficacement les prestataires de soins et les patients."
+        "longDescription": "Quality Nurse représente la création complète d'un site vitrine moderne pour un service de soins infirmiers à domicile établi depuis plus de 25 ans. Le projet consistait à développer une présence web professionnelle pour Jean-Charles Tonnelle et son équipe, spécialisés dans les soins palliatifs, perfusions et nutrition entérale. Le site présente clairement les 11 prestations médicales (toilette complète, administration médicaments, soins plaies, perfusions, etc.), met en avant l'expertise professionnelle de l'équipe et facilite le contact d'urgence 24h/24. Déployé sur qualitynurse.be, le site sert efficacement les patients dans les communes d'Uccle, Ixelles, Forest, Watermael-Boitsfort et environs."
       },
       "lasermagique": {
         "title": "Application Laser Magique",
@@ -267,6 +267,11 @@
       "planning": "Planification",
       "testing": "Tests",
       "maintenance": "Maintenance"
+    },
+    "notFound": {
+      "title": "Projet non trouvé",
+      "description": "Le projet que vous recherchez n'existe pas ou a été déplacé.",
+      "backButton": "Retour aux projets"
     }
   },
   "contact": {
@@ -281,7 +286,6 @@
       "submit": "Envoyer",
       "sending": "Envoi en cours...",
       "success": "✅ Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
-      "sendAnother": "Envoyer un autre message",
       "notice": "⚠️ Ce formulaire n'est pas encore fonctionnel. Veuillez me contacter directement via les réseaux sociaux."
     }
   },
@@ -361,9 +365,9 @@
     "title": "Activité GitHub",
     "error": "Erreur lors du chargement des données GitHub",
     "stats": {
-      "repositories": "Repositories",
-      "stars": "Stars",
-      "followers": "Followers"
+      "repositories": "Répertoires",
+      "stars": "Étoiles",
+      "followers": "Abonnés"
     },
     "topRepos": "Projets populaires",
     "noDescription": "Pas de description disponible",
