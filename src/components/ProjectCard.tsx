@@ -106,14 +106,15 @@ export default function ProjectCard({
         </p>
 
         <div className="flex flex-wrap gap-2 mb-6">
-          {Array.isArray(technologies) && technologies.map((tech) => (
-            <span
-              key={tech}
-              className="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/20 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
-            >
-              {tech}
-            </span>
-          ))}
+          {Array.isArray(technologies) &&
+            technologies.map((tech) => (
+              <span
+                key={tech}
+                className="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/20 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
+              >
+                {tech}
+              </span>
+            ))}
         </div>
 
         <div className="flex space-x-4 mt-auto">
@@ -122,7 +123,7 @@ export default function ProjectCard({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                window.open(liveUrl, '_blank', 'noopener,noreferrer');
+                window.open(liveUrl, "_blank", "noopener,noreferrer");
               }}
               className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors duration-200"
             >
@@ -149,7 +150,7 @@ export default function ProjectCard({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                window.open(githubUrl, '_blank', 'noopener,noreferrer');
+                window.open(githubUrl, "_blank", "noopener,noreferrer");
               }}
               className="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white text-sm font-medium rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 border border-gray-200 dark:border-gray-600"
             >
