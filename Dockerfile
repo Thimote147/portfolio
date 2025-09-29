@@ -13,23 +13,21 @@ ENV VITE_EMAILJS_SERVICE_ID=$VITE_EMAILJS_SERVICE_ID
 ENV VITE_EMAILJS_TEMPLATE_ID=$VITE_EMAILJS_TEMPLATE_ID
 ENV VITE_EMAILJS_PUBLIC_KEY=$VITE_EMAILJS_PUBLIC_KEY
 
-# Copy package files
+# Copy package files first for better cache layers
 COPY package*.json ./
-
-# Install dependencies
-RUN npm ci
+RUN npm ci --silent
 
 # Copy source code
 COPY . .
 
-# Debug: Check environment variables
+# Verify environment variables
 RUN node check-env.js
 
-# Build the application with environment variables
+# Build the application
 RUN npm run build
 
 # Production stage
-FROM nginx:alpine
+FROM nginx:1.25-alpine
 
 # Copy built application from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
