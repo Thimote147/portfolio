@@ -421,7 +421,7 @@ export default function About() {
                       </div>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Certifications à venir...
+                      {t("about.certifications_coming_soon")}
                     </p>
                   </motion.div>
                 )}

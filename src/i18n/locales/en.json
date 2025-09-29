@@ -30,6 +30,8 @@
     "skills": "Technical Skills",
     "experience": "Projects & Experience",
     "education_title": "Education",
+    "certifications_title": "Certifications & Training",
+    "certifications_coming_soon": "Certifications coming soon...",
     "downloadCV": "Download CV",
     "skillCategories": {
       "languages": "Languages",

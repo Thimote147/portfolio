@@ -30,6 +30,8 @@
     "skills": "Technische vaardigheden",
     "experience": "Projecten & Ervaring",
     "education_title": "Opleiding",
+    "certifications_title": "Certificaten & Training",
+    "certifications_coming_soon": "Certificaten binnenkort beschikbaar...",
     "downloadCV": "Download CV",
     "skillCategories": {
       "languages": "Talen",
