@@ -6,7 +6,7 @@ import SectionContainer from "../components/SectionContainer";
 import PageTransition from "../components/PageTransition";
 import useSEO from "../hooks/useSEO";
 import profileImage from "../assets/me.jpg";
-import cvFile from "../assets/CV_Fétu_Thimoté.pdf";
+import cvFile from "../assets/CV_Fetu_Thimote.pdf";
 
 export default function Home() {
   const { t } = useTranslation();
