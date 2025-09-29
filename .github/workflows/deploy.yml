@@ -65,23 +65,23 @@ jobs:
           # Test SSH connection
           ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful'"
 
-      - name: Create environment file on server
+      - name: Create environment file and build on server
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
             cd ~/websites/portfolio
+            
+            # Create environment file BEFORE building
             cat > .env << EOF
           VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
           EOF
-          ENDSSH
-
-      - name: Build and restart Docker container
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
-            cd ~/websites/portfolio
+            
+            # Stop existing containers
             docker-compose down || true
             docker rm -f portfolio || true
+            
+            # Build with environment variables
             docker-compose build --no-cache
             docker-compose up -d
           ENDSSH
