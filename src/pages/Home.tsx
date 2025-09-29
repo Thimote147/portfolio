@@ -17,8 +17,8 @@ export default function Home() {
       "Développeur passionné spécialisé en React, TypeScript, Flutter et Node.js. Création d'applications web et mobile modernes. Étudiant en informatique avec projets Quality Nurse et Laser Magique.",
     keywords:
       "développeur web, développeur mobile, React, TypeScript, Flutter, Node.js, full-stack, portfolio, Thimoté Fétu, étudiant développeur, applications web, applications mobile",
-    ogImage: "https://thimotefetu.fr/og-image.jpg",
-    canonical: "https://thimotefetu.fr/",
+    ogImage: "https://thimotefetu.be/og-image.jpg",
+    canonical: "https://thimotefetu.be/",
   });
 
   return (

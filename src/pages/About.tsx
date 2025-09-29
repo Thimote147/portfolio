@@ -94,8 +94,8 @@ export default function About() {
       "Découvrez mon parcours, mes compétences et mes expériences en développement. Étudiant passionné maîtrisant React, TypeScript, Flutter et Node.js avec projets Quality Nurse et Laser Magique.",
     keywords:
       "à propos, compétences, expérience, formation, React, TypeScript, Flutter, Node.js, développeur étudiant, parcours développeur, GitHub",
-    ogImage: "https://thimotefetu.fr/me.jpg",
-    canonical: "https://thimotefetu.fr/about",
+    ogImage: "https://thimotefetu.be/me.jpg",
+    canonical: "https://thimotefetu.be/about",
   });
 
   const education = [
@@ -421,7 +421,7 @@ export default function About() {
                       </div>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Certifications à venir...
+                      {t("about.certifications_coming_soon")}
                     </p>
                   </motion.div>
                 )}

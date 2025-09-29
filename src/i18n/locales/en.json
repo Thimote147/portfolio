@@ -27,9 +27,12 @@
   "about": {
     "title": "About Me",
     "intro": "Passionate application development student with full-stack expertise (frontend, backend, e2e, Azure DevOps). Specializing in modern web technologies and mobile development, I love creating complete and innovative solutions.",
+    "personalStory": "My developer journey started with curiosity about technology. What drives me most is solving complex problems and creating applications that have real impact. I love learning continuously and sharing my knowledge with the developer community. Outside of coding, I practice sports, enjoy music, and am passionate about technological innovation.",
     "skills": "Technical Skills",
     "experience": "Projects & Experience",
     "education_title": "Education",
+    "certifications_title": "Certifications & Training",
+    "certifications_coming_soon": "Certifications coming soon...",
     "downloadCV": "Download CV",
     "skillCategories": {
       "languages": "Languages",

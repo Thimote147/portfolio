@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://thimotefetu.fr/sitemap.xml
+Sitemap: https://thimotefetu.be/sitemap.xml
 
 # Disallow admin/private areas (if any)
 Disallow: /admin/

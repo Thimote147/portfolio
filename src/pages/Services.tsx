@@ -114,8 +114,8 @@ export default function Services() {
       "Services de développement web et mobile : création d'applications React, développement Flutter, consulting technique, maintenance et optimisation. Tarifs et processus de travail détaillés.",
     keywords:
       "services, développement web, développement mobile, React, Flutter, consulting, maintenance, optimisation, tarifs développeur, freelance développeur",
-    ogImage: "https://thimotefetu.fr/og-services.jpg",
-    canonical: "https://thimotefetu.fr/services",
+    ogImage: "https://thimotefetu.be/og-services.jpg",
+    canonical: "https://thimotefetu.be/services",
   });
 
   const services = [
