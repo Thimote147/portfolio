@@ -1,92 +1,83 @@
-name: Build & Deploy React.js Site to Server
+name: Deploy Portfolio
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment: production
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: 📦 Checkout code
+        uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
+      - name: 🔑 Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
         with:
-          node-version: 18
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        env:
-          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
-          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
-          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
-        run: npm run build
-
-      - name: Submit dependencies
-        run: echo "Submitting build-time dependencies for ecosystem..."
-
-      - name: Setup SSH key
+      - name: 📝 Add server to known hosts
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          chmod 700 ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
-          # Test SSH connection
-          ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful'"
+      - name: 🧪 Test SSH connection
+        run: |
+          ssh -o ConnectTimeout=10 ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo '✅ SSH connection successful'"
 
-      - name: Clone repository on server
+      - name: 🚀 Deploy to server
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
+            set -e
+            
+            echo "📁 Setting up deployment directory..."
             mkdir -p ~/websites
             cd ~/websites
-            rm -rf portfolio
-            git clone git@github.com:Thimote147/portfolio.git portfolio
-          ENDSSH
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          chmod 700 ~/.ssh
-          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
-
-          # Test SSH connection
-          ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo 'SSH connection successful'"
-
-      - name: Create environment file and build on server
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
-            cd ~/websites/portfolio
             
-            # Create environment file BEFORE building
+            # Clean previous deployment
+            if [ -d "portfolio" ]; then
+              cd portfolio
+              docker-compose down --remove-orphans || true
+              docker container prune -f || true
+              cd ..
+              rm -rf portfolio
+            fi
+            
+            echo "📥 Cloning repository..."
+            git clone git@github.com:Thimote147/portfolio.git portfolio
+            cd portfolio
+            
+            echo "🔧 Setting up environment..."
             cat > .env << EOF
           VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
           EOF
             
-            # Export variables for docker-compose
+            echo "🏗️  Building and deploying..."
             export VITE_EMAILJS_SERVICE_ID="${{ secrets.VITE_EMAILJS_SERVICE_ID }}"
             export VITE_EMAILJS_TEMPLATE_ID="${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}"
             export VITE_EMAILJS_PUBLIC_KEY="${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}"
             
-            # Stop existing containers
-            docker-compose down || true
-            docker rm -f portfolio || true
-            
-            # Build with environment variables
             docker-compose build --no-cache
             docker-compose up -d
+            
+            echo "⏳ Waiting for container to be ready..."
+            sleep 15
+            
+            # Vérifier que le container fonctionne
+            if docker-compose ps | grep -q "Up"; then
+              echo "✅ Container is running"
+              
+              # Vérifier la santé de l'application
+              ./health-check.sh http://localhost:7777
+              
+              echo "🎉 Deployment successful!"
+            else
+              echo "❌ Container failed to start!"
+              docker-compose logs
+              exit 1
+            fi
           ENDSSH

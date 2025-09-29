@@ -1,0 +1,20 @@
+# Docker Compose pour le développement local
+# Usage: docker-compose -f docker-compose.dev.yml up
+
+services:
+  portfolio-dev:
+    build:
+      context: .
+      target: builder
+    container_name: portfolio-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - VITE_EMAILJS_SERVICE_ID=${VITE_EMAILJS_SERVICE_ID:-}
+      - VITE_EMAILJS_TEMPLATE_ID=${VITE_EMAILJS_TEMPLATE_ID:-}
+      - VITE_EMAILJS_PUBLIC_KEY=${VITE_EMAILJS_PUBLIC_KEY:-}
+    command: npm run dev
+    restart: unless-stopped
