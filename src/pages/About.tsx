@@ -7,7 +7,7 @@ import PageTransition from "../components/PageTransition";
 import Button from "../components/Button";
 import useSEO from "../hooks/useSEO";
 import profileImage from "../assets/me.jpg";
-import cvFile from "../assets/CV_Fétu_Thimoté.pdf";
+import cvFile from "../assets/CV_Fetu_Thimote.pdf";
 
 interface Certification {
   title: string;

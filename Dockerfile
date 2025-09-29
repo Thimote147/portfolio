@@ -3,6 +3,16 @@ FROM node:18.20.4-alpine AS builder
 
 WORKDIR /app
 
+# Declare build arguments
+ARG VITE_EMAILJS_SERVICE_ID
+ARG VITE_EMAILJS_TEMPLATE_ID
+ARG VITE_EMAILJS_PUBLIC_KEY
+
+# Set environment variables
+ENV VITE_EMAILJS_SERVICE_ID=$VITE_EMAILJS_SERVICE_ID
+ENV VITE_EMAILJS_TEMPLATE_ID=$VITE_EMAILJS_TEMPLATE_ID
+ENV VITE_EMAILJS_PUBLIC_KEY=$VITE_EMAILJS_PUBLIC_KEY
+
 # Copy package files
 COPY package*.json ./
 
@@ -12,8 +22,8 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Copy environment file
-COPY .env .
+# Debug: Check environment variables
+RUN node check-env.js
 
 # Build the application with environment variables
 RUN npm run build

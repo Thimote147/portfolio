@@ -77,6 +77,11 @@ jobs:
           VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
           EOF
             
+            # Export variables for docker-compose
+            export VITE_EMAILJS_SERVICE_ID="${{ secrets.VITE_EMAILJS_SERVICE_ID }}"
+            export VITE_EMAILJS_TEMPLATE_ID="${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}"
+            export VITE_EMAILJS_PUBLIC_KEY="${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}"
+            
             # Stop existing containers
             docker-compose down || true
             docker rm -f portfolio || true
